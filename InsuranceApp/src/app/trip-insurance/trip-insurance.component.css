@@ -1,0 +1,19 @@
+div.mojaKlasa {
+
+    position:static;
+
+
+}
+
+
+.donjiDiv{
+    
+    
+        position:absolute;
+        bottom:0px;
+    }
+
+.over {
+
+    overflow: scroll;
+}

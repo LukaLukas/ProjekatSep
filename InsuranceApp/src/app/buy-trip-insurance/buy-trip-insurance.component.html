@@ -1,0 +1,432 @@
+<div class = "w3-container">
+
+  <div class = "w3-row">
+    <div class = "w3-container w3-quarter w3-padding">
+
+            <img src= "/images/logo1.jpg" style="width:100%; height:100px;">
+
+    </div>
+
+    <div class = "w3-container w3-half w3-padding">
+
+            <div class = "w3-bar">
+            
+                        <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
+                        <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                        
+            
+            </div>
+
+            <br>
+
+
+            <div class = "w3-bar w3-black ">
+                    
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectHome()"><b>Pocetna</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('about')"><b>O nama</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('Location')"><b>Lokacije</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('tripInsurance')"><b>Automobili i putovanja</b> </button>
+                        
+                   
+                          
+            </div>
+
+
+    </div>
+
+    <div class = "w3-container w3-quarter">
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class = "w3-row">
+  <div class = "w3-container w3-quarter">
+
+  </div>
+
+  <div class = "w3-quarter">
+      <label class = "w3-text-gray w3-small">Pocetna>Web osiguranje>Putno osiguranje </label>
+
+  </div>
+
+  <div class = "w3-rest">
+
+  </div>
+
+</div>
+
+
+<br>
+
+<div class = "w3-row">
+  
+  
+            <div class = "w3-container w3-quarter">
+            </div>
+  
+            <div class = "w3-container w3-half w3-center">
+  
+                    <h1 class= "w3-text-red w3-xxlarge ">  PUTNO OSIGURANJE  </h1>
+                
+            </div>
+  
+            <div class = "w3-container w3-rest  w3-padding">
+  
+                   <p> </p>
+  
+  
+            </div>
+  
+  
+  
+    </div>
+
+ <br>
+    <div class = "w3-row">
+
+        <div class = "w3-col" style = "width:16%">
+
+          <p> </p>
+
+        </div>
+
+
+        <div class = "w3-col" style ="width:68%">
+
+            
+            <div class = "w3-bar w3-border w3-light-gray w3-padding" style = "width:100%">
+
+                <div class = "w3-bar-item w3-padding w3-bottombar w3-border-red">
+
+                  <br>
+                  <h3><b>Podaci za proracun</b></h3>
+
+
+                </div>
+
+                <div class = "w3-bar-item w3-padding">
+                    
+                  <br>
+                  <h3><b>Cena</b></h3>
+                    
+                    
+               </div>
+
+               <div class = "w3-bar-item w3-padding">
+                
+              <br>
+              <h3><b>Podaci</b></h3>
+                
+                
+           </div>
+
+               <div class = "w3-bar-item">
+                  
+                <br>
+                <h3><b>Podaci o nosiocu osiguranja</b></h3>
+                  
+                  
+             </div>
+
+             <div class = "w3-bar-item">
+                
+              <br>
+              <h3><b>Porudzbina</b></h3>
+                
+                
+           </div>
+
+            </div>
+
+
+        </div>
+
+        <div class = "w3-col" style = "width:16%">
+
+            <p>
+                </p>
+
+        </div> 
+
+
+
+
+    </div>
+
+    <br>
+    <br>
+    <div class = "w3-row">
+
+
+        <div class = "w3-quarter">
+          <p>  </p>
+
+        </div>
+
+
+        <div class = "w3-half">
+
+          <div class = "w3-container">
+
+            <label class = "w3-text-gray"><strong>Destinacija</strong> </label>
+            <br>
+            
+            <select class="w3-select w3-border" name="optionDestination" style = "width:70%;" [(ngModel)]= "modelVrednost.destinacija"> <!-- ovde ide baza podataka -->
+                <option value="1" selected>Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+
+          </div>
+
+          <br>
+          <br>
+
+
+          <div class = "w3-container">
+                
+                            <label class = "w3-text-gray"><strong>Vrsta osiguravajuceg paketa</strong> </label>
+                            <br>
+                            
+                            <select class="w3-select w3-border" name="optionPackage" (change)="changePorodicno()" style = "width:70%;" [(ngModel)]= "modelVrednost.vrstaPaketa"> <!-- ovde ide baza podataka -->
+                                
+                                <option value="1" selected>Individualno</option>
+                                <option value="2">Porodicno</option>
+                            </select>
+                
+            </div>
+                
+            <br>
+            <br>
+
+
+          <div *ngIf="porodicno" class = "w3-container">
+              
+              <label class = "w3-text-gray"><strong>Broj roditelja</strong> </label>
+              <br>
+                          
+             <input class = "w3-input w3-border" type = "number" min="1" style = "width:40%" [(ngModel)]="modelVrednost.brojRoditelja"> 
+              
+          </div>
+
+          <br>
+          <br>
+
+
+          <div *ngIf="porodicno" class = "w3-container">
+                
+                <label class = "w3-text-gray"><strong>Broj dece</strong> </label>
+                <br>
+                            
+               <input class = "w3-input w3-border" type = "number" min="1" style = "width:40%" [(ngModel)]="modelVrednost.brojDece"> 
+                
+            </div>
+  
+            <br>
+            <br>
+
+            <div *ngIf="!porodicno" class = "w3-container">
+                    
+                    <label class = "w3-text-gray"><strong>Uzrast lica koja putuje</strong> </label>
+                    <br>
+                                
+                    <select class="w3-select w3-border" name="optionYouth" style = "width:40%;" [(ngModel)]="modelVrednost.uzrastLica"> <!-- ovde ide baza podataka -->
+                        
+                        <option value="Deca">Deca (6 meseci-18 godina)</option>
+                        <option value="Odrasli" selected>Odrasli (18-70 godina)</option>
+                        <option value="Stariji">Stariji (preko 70 godina)</option>
+                    </select>
+                    
+                </div>
+      
+                <br>
+                <br>
+  
+
+          <div class = "w3-container">
+              
+             <label class = "w3-text-gray"><strong>Pocetak osiguranja</strong> </label>
+             <br>
+                <input class = "w3-input w3-border" type = "date" style = "width:40%" [(ngModel)]="modelVrednost.pocetakOsiguranja">         
+            
+              
+          </div>
+
+            <br>
+            <br>
+
+            <div class = "w3-container w3-bar">
+                
+               <label class = "w3-text-gray"><strong> Trajanje osiguranja</strong> </label>
+              <br>
+              
+               <input class = "w3-input w3-border w3-bar-item" type = "number" min="1" style = "width:40%" [(ngModel)]= "modelVrednost.trajanjeOsiguranja"><label class = "w3-bar-item"> dana </label>       
+             
+                
+            </div>
+
+           
+
+            <br>
+            <br>
+            <div class = "w3-container">
+                
+              <label class = "w3-text-gray"><strong>Do kog iznosa je osoba osigurana</strong> </label>
+              <br>
+                            
+              <select class="w3-select w3-border" name="optionYouth" style = "width:40%" [(ngModel)]="modelVrednost.iznos"> <!-- ovde ide baza podataka -->
+                <option value="10000$" selected>10000$</option>
+                <option value="20000$">20000$</option>
+                <option value="30000$">30000$</option>
+                <option value="preko$">preko...</option>
+                </select>
+                
+            </div>
+
+            <br>
+            <br>
+          
+        
+            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueWithObject()">IZRACUNAJ </button>
+            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani </button>
+            
+          
+
+
+
+        </div>
+
+
+
+        <div class = "w3-quarter">
+
+           <p> </p>
+<!--
+                <div id="id01" class="w3-modal ">
+                       
+                        <app-buy-stambeno-insurance></app-buy-stambeno-insurance>
+                
+                      </div>
+
+
+
+                      <div id="id02" class="w3-modal ">
+                           
+                            <app-buy-casco-insurance></app-buy-casco-insurance>
+
+                          </div>
+
+                        -->
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class = "w3-row-padding">
+        <div class = "w3-quarter">
+
+                <p> </p>
+
+        </div>
+
+
+        <div class = "w3-half">
+                
+                   <p> </p>
+                
+         </div>
+
+         <div class = "w3-quarter">
+             <!--   
+                <h3 class = "w3-text-blue">Dodatne mogucnosti:</h3>
+                <ul class = "w3-ul w3-border" style = "width:80%">
+                        <li> <label class = "w3-text-blue"><b>Stambeno osiguranje </b> </label> <button class = "w3-btn" onclick = "document.getElementById('id01').style.display='block'" > <i class="fa fa-check" style="font-size:36px"></i>  </button> </li>
+                        <li> <label class = "w3-text-blue"><b>Pomoc na putu </b> </label> <button class = "w3-btn" onclick = "document.getElementById('id02').style.display='block'" > <i class="fa fa-check" style="font-size:36px"></i>  </button> </li>
+                        
+                </ul>        
+            -->
+                
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class = "w3-row">
+
+
+        <div class = "w3-quarter">
+          <p> </p>
+        </div>
+
+        <div class = "w3-half w3-display-container">
+
+          <div class = "w3-display-left">
+
+            <div class = "w3-bar">
+
+                <i class="fa fa-cc-mastercard w3-bar-item " style="font-size:60px;"></i>
+                <i class="fa fa-cc-visa w3-bar-item" style="font-size:60px;"></i>
+                <i class="fa fa-cc-diners-club w3-bar-item" style="font-size:60px;"></i>
+
+            </div>
+        
+              
+          </div>
+
+          <div class = "w3-display-middle">
+              <div class = "w3-bar">
+                  <i class="fa fa-cc-paypal w3-bar-item" style="font-size:60px;"></i>
+                  <i class="fa fa-credit-card w3-bar-item" style="font-size:60px;"></i>
+                  
+              </div>
+          </div>
+
+          <div class = "w3-display-right">
+              <div class = "w3-bar">
+                  <i class="fa fa-paypal w3-bar-item" style="font-size:60px;"></i>
+                  
+                  
+              </div>
+          </div>
+
+        </div>
+
+
+        <div class = "w3-quarter">
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <br>
+    
+        <div class = "w3-row-padding">
+    
+                <div class = "w3-bar">
+                        <i class="fa fa-facebook-official w3-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-instagram w-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-linkedin-square w3-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-twitter w3-bar-item" style="font-size:36px"></i>
+                          </div>
+    
+        </div>
+
+
+
+</div>

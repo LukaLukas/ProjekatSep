@@ -1,0 +1,393 @@
+<div class = "w3-container">
+
+    <div class = "w3-row">
+        <div class = "w3-container w3-quarter w3-padding">
+    
+                <img src= "/images/logo1.jpg" style="width:100%; height:100px;">
+    
+        </div>
+    
+        <div class = "w3-container w3-half w3-padding">
+    
+                <div class = "w3-bar">
+                
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                            
+                
+                </div>
+    
+                <br>
+    
+    
+                <div class = "w3-bar w3-black ">
+                        
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectHome()"><b>Pocetna</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('about')"><b>O nama</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('Location')"><b>Lokacije</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('tripInsurance')"><b>Automobili i putovanja</b> </button>
+                            
+                       
+                              
+                </div>
+    
+    
+        </div>
+    
+        <div class = "w3-container w3-quarter">
+    
+        </div>
+    
+    </div>
+
+
+
+
+<div class = "w3-row">
+    <div class = "w3-container w3-quarter">
+  
+    </div>
+  
+    <div class = "w3-quarter">
+        <label class = "w3-text-gray w3-small">Pocetna>Web osiguranje>Putno osiguranje </label>
+  
+    </div>
+  
+    <div class = "w3-rest">
+  
+    </div>
+  
+  </div>
+
+  
+
+<br>
+
+<div class = "w3-row">
+  
+  
+            <div class = "w3-container w3-quarter">
+            </div>
+  
+            <div class = "w3-container w3-half w3-center">
+  
+                    <h1 class= "w3-text-red w3-xxlarge ">  PUTNO OSIGURANJE  </h1>
+                
+            </div>
+  
+            <div class = "w3-container w3-rest  w3-padding">
+  
+                   <p> </p>
+  
+  
+            </div>
+  
+  
+  
+  </div>
+
+  <div class = "w3-row">
+        <div class = "w3-container w3-quarter">
+            <p> </p>
+            </div>
+
+            <div class = "w3-container w3-half ">
+                    
+                    <div id="id01" class="w3-modal ">
+                            
+                             <app-buy-stambeno-insurance [valueObjekatStambeno]="valueObjekatStambeno"></app-buy-stambeno-insurance>
+                     
+                           </div>
+     
+     
+     
+                           <div id="id02" class="w3-modal ">
+                                
+                                 <app-buy-casco-insurance [valueObjekatPut]="valueObjekatPut"></app-buy-casco-insurance>
+     
+                               </div>
+                        
+            </div>
+
+            <div class = "w3-container w3-rest  w3-padding">
+                    
+                                     <p> </p>
+                    
+                    
+            </div>
+            
+        
+
+</div>
+
+<div class = "w3-row">
+        
+                <div class = "w3-col" style = "width:16%">
+        
+                  <p> </p>
+        
+                </div>
+        
+        
+                <div class = "w3-col" style ="width:68%">
+        
+                    
+                    <div class = "w3-bar w3-border w3-light-gray w3-padding" style = "width:100%">
+        
+                        <div class = "w3-bar-item w3-padding">
+        
+                          <br>
+                          <h3><b>Podaci za proracun</b></h3>
+        
+        
+                        </div>
+        
+                        <div class = "w3-bar-item w3-padding w3-bottombar w3-border-red">
+                            
+                          <br>
+                          <h3><b>Cena</b></h3>
+                            
+                            
+                       </div>
+        
+                       <div class = "w3-bar-item w3-padding">
+                        
+                      <br>
+                      <h3><b>Podaci</b></h3>
+                        
+                        
+                   </div>
+        
+                       <div class = "w3-bar-item">
+                          
+                        <br>
+                        <h3><b>Podaci o nosiocu osiguranja</b></h3>
+                          
+                          
+                     </div>
+        
+                     <div class = "w3-bar-item">
+                        
+                      <br>
+                      <h3><b>Porudzbina</b></h3>
+                        
+                        
+                   </div>
+        
+                    </div>
+        
+        
+                </div>
+        
+                <div class = "w3-col" style = "width:16%">
+        
+                    <p>
+                        </p>
+        
+                </div> 
+        
+        
+        
+        
+            </div>
+  
+  
+  <br>
+  <br>
+
+    <div class = "w3-row">
+
+        <div class = "w3-quarter">
+          <p>
+
+          </p>
+
+        </div>
+
+        <div class = "w3-half">
+
+          <table class = "w3-table-all w3-hoverable" style = "width:80%">
+
+              <tr>
+                  <th>Parametri proracuna </th>
+                  <th> </th>
+              </tr>
+
+              <tr>
+
+                  <td> Datum proracuna: </td>
+                  <td> {{datum}} </td>
+
+              </tr>
+
+              <tr>
+                  
+                     <td> Destinacija: </td>
+                     <td> {{valueObjekatPutno.destinacija}}  </td>
+                  
+              </tr>
+
+              <tr>
+                  
+                       <td> Vrsta paketa: </td>
+                       <td> {{valueObjekatPutno.vrstaPaketa}}  </td>
+                    
+                </tr>
+
+              <tr>
+                  
+                     <td> Teritorija: </td>
+                     <td> {{valueObjekatPutno.destinacija}}  </td>
+                  
+              </tr>
+
+              <tr>
+                  
+                     <td> Osigurana suma: </td>
+                     <td> {{valueObjekatPutno.iznos}}  </td>
+                  
+              </tr>
+
+
+              <tr>
+                  
+                     <td> Pocetak osiguranja: </td>
+                     <td> {{valueObjekatPutno.pocetakOsiguranja}}  </td>
+                  
+              </tr>
+
+
+              <tr>
+                  
+                     <td>  Kraj osiguranja: </td>
+                     <td> {{result2}}  </td>
+                  
+              </tr>
+
+
+              <tr>
+                  
+                     <td> Trajanje osiguranja: </td>
+                     <td> {{valueObjekatPutno.trajanjeOsiguranja}}  </td>
+                  
+              </tr>
+
+
+          </table>
+
+          <br>
+
+          <table class = "w3-table-all" style = "width:80%">
+
+            <tr>
+                <th> Rezultat </th>
+                <th> </th>
+
+            </tr>
+
+          <tr>
+                <td> Premija-osnovica bez umanjena (RSD) </td>
+                <td>  </td>
+          </tr>
+
+          </table>
+
+
+          <br>
+          <br>
+          <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValue('BuyTrip')">Nazad </button>
+          <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObjects()">Odustani od kupovine </button>
+          <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueWithObjects()">Nastavi sa kupovinom </button>
+        
+          
+
+
+        </div>
+
+        <div class = "w3-quarter">
+
+                <br>
+
+                <h2><b>Dodatne mogucnosti: </b> </h2>
+
+                <ul class="w3-ul">
+
+             <li>   <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  onclick = "document.getElementById('id01').style.display='block'" ><b>Stambeno osiguranje</b> </button></li>
+             <li>   <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  onclick = "document.getElementById('id02').style.display='block'"><b>Pomoc na putu</b> </button> </li>
+                </ul>
+        </div>
+
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class = "w3-row">
+
+
+        <div class = "w3-quarter">
+          <p> </p>
+        </div>
+
+        <div class = "w3-half w3-display-container">
+
+          <div class = "w3-display-left">
+
+            <div class = "w3-bar">
+
+                <i class="fa fa-cc-mastercard w3-bar-item " style="font-size:60px;"></i>
+                <i class="fa fa-cc-visa w3-bar-item" style="font-size:60px;"></i>
+                <i class="fa fa-cc-diners-club w3-bar-item" style="font-size:60px;"></i>
+
+            </div>
+        
+              
+          </div>
+
+          <div class = "w3-display-middle">
+              <div class = "w3-bar">
+                  <i class="fa fa-cc-paypal w3-bar-item" style="font-size:60px;"></i>
+                  <i class="fa fa-credit-card w3-bar-item" style="font-size:60px;"></i>
+                  
+              </div>
+          </div>
+
+          <div class = "w3-display-right">
+              <div class = "w3-bar">
+                  <i class="fa fa-paypal w3-bar-item" style="font-size:60px;"></i>
+                  
+                  
+              </div>
+          </div>
+
+        </div>
+
+
+        <div class = "w3-quarter">
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <br>
+    
+        <div class = "w3-row-padding">
+    
+                <div class = "w3-bar">
+                        <i class="fa fa-facebook-official w3-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-instagram w-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-linkedin-square w3-bar-item" style="font-size:36px"></i>
+                        <i class="fa fa-twitter w3-bar-item" style="font-size:36px"></i>
+                          </div>
+    
+        </div>
+
+
+</div>

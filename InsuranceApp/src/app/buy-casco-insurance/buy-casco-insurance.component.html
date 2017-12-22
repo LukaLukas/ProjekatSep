@@ -1,0 +1,232 @@
+<div class = "w3-container w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:700px">
+    
+    
+        
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        
+        </div>
+    
+    
+          
+          <div class = "w3-row">
+            
+            
+                      <div class = "w3-container w3-quarter">
+                      </div>
+            
+                      <div class = "w3-container w3-half w3-center">
+            
+                              <h1 class= "w3-text-red w3-xxlarge ">  OSIGURANJE NA PUTU  </h1>
+                          
+                      </div>
+            
+                      <div class = "w3-container w3-rest  w3-padding">
+            
+                             <p> </p>
+            
+            
+                      </div>
+            
+            
+            
+              </div>
+    
+    
+              <br>
+              <br>
+    
+              <div class = "w3-row">
+    
+                <div class = "w3-quarter"> 
+                  
+                  <p> </p>
+                </div>
+    
+                <div class = "w3-half">
+                  
+                
+                    <div class = "w3-container">
+                        
+                       <label class = "w3-text-gray"><strong>Ime i prezime vlasnika</strong> </label>
+                      <br>
+                      
+                       <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.imePrezimeVlasnik">      
+                     
+                        
+                    </div>
+
+                    <br>
+                    <br>
+
+
+
+                    <div class = "w3-container">
+                        
+                       <label class = "w3-text-gray"><strong>JMBG vlasnika</strong> </label>
+                      <br>
+                      
+                       <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.jmbg">      
+                     
+                        
+                    </div>
+
+                    <br>
+                    <br>
+                  
+
+
+                  
+                            <div class = "w3-container ">
+                  
+                              <label class = "w3-text-gray"><strong>Trajanje osiguranja</strong> </label>
+                              <br>
+                              <input class = "w3-input w3-border w3-center " type = "number" min="1" style = "width:100%" [(ngModel)]="valueObjekatPut.trajanjeOsiguranja">
+                             
+                  
+                            </div>
+                  
+                            <br>
+                            <br>
+                  
+                  
+                            <div class = "w3-container">
+                                
+                                <label class = "w3-text-gray"><strong>Paket </strong> </label>
+                                <br>
+                                            
+                                <select class="w3-select w3-border" name="optionPackage" style = "width:100%" [(ngModel)]="valueObjekatPut.paketVrsta"> <!-- ovde ide baza podataka -->
+                                  <option value="prvi" selected>prvi</option>
+                                  <option value="drugi">drugi</option>
+                                  <option value="treci">treci</option>
+                                  </select>
+                                
+                            </div>
+                  
+                            <br>
+                            <br>
+                  
+                            <div class = "w3-container">
+                                
+                               <label class = "w3-text-gray"><strong>Kilometraza slepovanja</strong> </label>
+                               <br>
+                                  <input class = "w3-input w3-border" type = "number" min="1" style = "width:100%" [(ngModel)]= "valueObjekatPut.kiloSlepovanja">         
+                              
+                                
+                            </div>
+                  
+                              <br>
+                              <br>
+                  
+                              <div class = "w3-container">
+                                  
+                                 <label class = "w3-text-gray"><strong>Cena popravke ($)  </strong> </label>
+                                <br>
+                                
+                                 <input class = "w3-input w3-border w3-bar-item" type = "number" min = "100"  style = "width:100%" [(ngModel)]="valueObjekatPut.cenaPopravke">      
+                               
+                                  
+                              </div>
+                  
+                              <br>
+                              <br>
+                              <div class = "w3-container">
+                                  
+                                <label class = "w3-text-gray"><strong>Broj dana u hotelu</strong> </label>
+                                <br>
+                                              
+                                <select class="w3-select w3-border" name="optionHotelDay" style = "width:100%" [(ngModel)]="valueObjekatPut.brojDanaHotel"> <!-- ovde ide baza podataka -->
+                                  <option value="jedan" selected>1</option>
+                                  <option value="dva">2</option>
+                                  <option value="tri">3</option>
+                                  </select>
+                                  
+                              </div>
+
+
+
+                              <br>
+                              <br>
+                              <div class = "w3-container">
+                                  
+                                <label class = "w3-text-gray"><strong>Alternativni prevoz</strong> </label>
+                                <br>
+                                              
+                                <select class="w3-select w3-border" name="optionRide" style = "width:100%" [(ngModel)]="valueObjekatPut.altPrevoz"> <!-- ovde ide baza podataka -->
+                                  <option value="jedna" selected>1</option>
+                                  <option value="druga">2</option>
+                                  <option value="treca">3</option>
+                                  </select>
+                                  
+                              </div>
+                  
+                              <br>
+                              <br>
+                              <hr>
+                              
+                              <div class = "w3-container">
+                                  
+                                 <label class = "w3-text-gray"><strong> Marka i tip vozila</strong> </label>
+                                <br>
+                                
+                                 <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.markaTipVozila">      
+                               
+                                  
+                              </div>
+    
+                              <br>
+                              <br>
+    
+    
+                              <div class = "w3-container">
+                                  
+                                 <label class = "w3-text-gray"><strong> Godina proizvodnje</strong> </label>
+                                <br>
+                                
+                                 <input class = "w3-input w3-border w3-bar-item" type = "number" min = "1960" max = "2017"  style = "width:100%" [(ngModel)]="valueObjekatPut.godinaProizvodnje">      
+                               
+                                  
+                              </div>
+                              <br>
+                              <br>
+                              <div class = "w3-container">
+                                  
+                                 <label class = "w3-text-gray"><strong>Broj registarske tablice</strong> </label>
+                                <br>
+                                
+                                 <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.tablicaBroj">      
+                               
+                                  
+                              </div>
+
+                              <br>
+                              <br>
+                              <div class = "w3-container">
+                                  
+                                 <label class = "w3-text-gray"><strong>Broj sasije</strong> </label>
+                                <br>
+                                
+                                 <input class = "w3-input w3-border w3-bar-item" type = "number"  style = "width:100%" [(ngModel)]="valueObjekatPut.brojSasije">      
+                               
+                                  
+                              </div>
+    
+    
+    
+                    </div>
+    
+                    <div class = "w3-quarter"> 
+                        
+                        <p> </p>
+                      </div>
+                  
+                      </div>
+    
+                      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Izadji</button>
+                          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red w3-right">Sacuvaj</button>
+                          
+                        </div>       
+    
+    
+    </div>

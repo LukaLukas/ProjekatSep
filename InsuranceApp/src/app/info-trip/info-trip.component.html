@@ -1,0 +1,273 @@
+<div class = "w3-container">
+
+    <div class = "w3-row">
+        <div class = "w3-container w3-quarter w3-padding">
+
+                <img src= "/images/logo1.jpg" style="width:100%; height:100px;">
+
+        </div>
+
+        <div class = "w3-container w3-half w3-padding">
+
+                <div class = "w3-bar">
+                
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                            
+                
+                </div>
+
+                <br>
+
+
+                <div class = "w3-bar w3-black ">
+                        
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectHome()"><b>Pocetna</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('about')"><b>O nama</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('Location')"><b>Lokacije</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('tripInsurance')"><b>Automobili i putovanja</b> </button>
+                            
+                       
+                              
+                </div>
+
+
+        </div>
+
+        <div class = "w3-container w3-quarter">
+
+        </div>
+
+  </div>
+
+
+  <div class = "w3-row">
+      <div class = "w3-container w3-quarter">
+
+      </div>
+
+      <div class = "w3-quarter">
+          <label class = "w3-text-gray w3-small">Pocetna>Fizicka lica>Automobili i putovanja>Medjunarodno putno osiguranje> </label>
+
+      </div>
+
+      <div class = "w3-rest">
+
+      </div>
+
+  </div>
+
+
+
+  <br>
+  <div class = "w3-row">
+
+
+          <div class = "w3-container w3-quarter">
+          </div>
+
+          <div class = "w3-container w3-half w3-center">
+
+                  <h1 class= "w3-text-red w3-xxlarge "> MEDJUNARODNO PUTNO OSIGURANJE  </h1>
+                 
+                  <p class = "w3-text-grey w3-xlarge"><b> Putujte i uživajte u putovanju bez brige</b> </p>
+                  
+                  
+
+
+
+          </div>
+
+          <div class = "w3-container w3-rest  w3-padding">
+
+                  <div class = {{vrednost3}} style = "width:330px">
+                          
+                      <div class = "w3-light-gray ">
+
+                          <div class = "w3-display-topright">
+                              <button class = "w3-btn w3-red" (click)= "Ugasi()"> <i class="fa fa-close" style="font-size:24px"></i>    </button>
+
+                          </div>
+                          <h3  class= "w3-text-red w3-border-bottom w3-border-red"> Kontakt: </h3>
+                          <hr>
+                          <p>
+                              063-7546762
+                          </p>
+                          <p>
+                              besplatna linija:
+                              063:7546762
+                          </p>
+                        
+                        
+                          <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)="redirectValue('/Contact')"> <b>Kontaktirajte nas</b> </button>
+                          
+                          <p></p>
+  
+
+                      </div>
+  
+                      </div>
+
+                  <button class = "w3-btn w3-xlarge w3-circle w3-red w3-card-4 w3-right" (click) = "Promena()"> <i class="fa fa-mobile " style="font-size:24px"></i> Kontakt </button>
+                  <br> <br> <br> <br>
+                  <button class = "w3-btn w3-xlarge w3-circle w3-red w3-card-4 w3-right" (click) = "Ugasi()"> <i class="fa fa-map-marker" style="font-size:24px"></i> Lokacije </button>
+
+
+          </div>
+
+
+
+  </div>
+
+
+  <div class= "w3-row-padding">
+
+
+    <div class = "w3-container w3-quarter w3-card" style="cursor:pointer">
+
+      <ul class = "w3-ul">
+        <li class = "w3-red"> <b>Automobili i putovanja</b> </li>
+        <li class = "w3-text-red w3-light-gray"><b>Medjunarodno putno osiguranje</b> </li>
+        <li class = "w3-hover-text-red w3-hover-light-gray"> 
+          
+        <a routerLink = "/InfoCasco" style = " text-decoration:none;"> <b>Kasko osiguranje</b> </a>
+          
+       </li>
+        <li class = "w3-hover-text-red w3-hover-light-gray"> 
+        
+          <a routerLink = "/InfoSport" style = " text-decoration:none;"> <b>Sportsko osiguranje</b> </a>
+        
+        </li>
+        <li class = "w3-hover-text-red w3-hover-light-gray">
+        
+          <a routerLink = "/InfoStambeno" style = " text-decoration:none;"> <b>Stambeno osiguranje</b>  </a>
+        
+        </li>
+        
+      </ul>
+
+    </div>
+
+    <div class = "w3-half w3-content ">
+
+      <p> <b>Tokom turističkog ili poslovnog boravka u inostranstvu, nepredviđeni zdravstveni problemi mogu vam poremetiti planove.
+         Mi vam pomažemo da takve situacije prevaziđete. </b> </p>
+      
+      <p> <b>Ukoliko vam se na putovanju desi nesrećni slučaj, bolest, 
+        ili se ukaže potreba za neodložnom hirurškom intervencijom i boravkom u bolnici, uz našu polisu međunarodnog putnog osiguranja bićete adekvatno zbrinuti. </b> </p>
+
+        <br>
+
+       
+        <button class = "w3-btn  w3-red w3-round w3-right"  (click)="redirectValue('/BuyTrip')"><b>Kupi</b> </button>
+        
+
+    </div>
+
+    <div class = "w3-content w3-quarter">
+
+    </div>
+
+
+  </div>
+
+  <br>
+
+  <div class = "w3-row">
+
+    <div class = "w3-quarter">
+      <p> </p>
+    </div>
+
+
+    <div class = "w3-half w3-content">
+
+
+        <h2 class = "w3-text-gray"> <b> Vasi benefiti </b> </h2>
+        <br>
+          <ul class = "w3-ul">
+             <li><i class="fa fa-check-square w3-red" style="font-size:24px;"></i> 
+            
+            <label class = "w3-text-gray">   Organizacija pomoći i naknada troškova lečenja u inostranstvu usled iznenadne bolesti ili nesrećnog slučaja  </label>
+            
+            </li>
+
+            <li><i class="fa fa-check-square w3-red" style="font-size:24px;"></i> 
+              
+            <label class = "w3-text-gray">  Dežurni centar Europ Assistance na raspolaganju 24 časa dnevno, 365 dana u godini  </label>
+              
+              </li>
+
+
+              <li><i class="fa fa-check-square w3-red" style="font-size:24px;"></i> 
+                
+              <label class = "w3-text-gray"> Medicinska, putna i pravna asistencija </label>
+                
+                </li>
+
+                <li><i class="fa fa-check-square w3-red" style="font-size:24px;"></i> 
+                  
+                <label class = "w3-text-gray"> Mogućnost ugovaranja osiguranja za pojedince i/ili porodicu</label>
+                  
+                  </li>
+
+                  <li><i class="fa fa-check-square w3-red" style="font-size:24px;"></i> 
+                    
+                  <label class = "w3-text-gray"> Mogućnost ugovaranja osiguranja tokom školovanja u inostranstvu</label>
+                    
+                    </li>
+
+
+          </ul>
+
+    </div>
+
+    <div class = "w3-quarter">
+
+    </div>
+
+   
+
+  </div>
+
+  <br>
+  <br>
+
+  <div class = "w3-row-padding">
+
+
+      <div class = "w3-quarter">   
+
+          <p> </p>
+      </div>
+
+      <div class = "w3-half w3-content">
+
+
+          <img  src = "/images/sight1.jpg" style = "width:100%; height:250px">
+
+      </div>
+
+
+      <div class = "w3-quarter">   
+          
+                    <p> </p>
+      </div>
+
+  </div>
+
+  <br>
+  
+      <div class = "w3-row-padding">
+  
+              <div class = "w3-bar">
+                      <i class="fa fa-facebook-official w3-bar-item" style="font-size:36px"></i>
+                      <i class="fa fa-instagram w-bar-item" style="font-size:36px"></i>
+                      <i class="fa fa-linkedin-square w3-bar-item" style="font-size:36px"></i>
+                      <i class="fa fa-twitter w3-bar-item" style="font-size:36px"></i>
+                        </div>
+  
+      </div>
+
+
+</div>

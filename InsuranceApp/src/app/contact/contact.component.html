@@ -1,0 +1,254 @@
+<div class = "w3-container ">
+
+    <div class = "w3-row">
+        <div class = "w3-container w3-quarter w3-padding">
+
+                <img src= "/images/logo1.jpg" style="width:100%; height:100px;">
+
+        </div>
+
+        <div class = "w3-container w3-half w3-padding">
+
+                <div class = "w3-bar">
+                
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                            
+                
+                </div>
+
+                <br>
+
+                <div class = "w3-bar w3-black ">
+                        
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectHome()"><b>Pocetna</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('about')"><b>O nama</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('Location')"><b>Lokacije</b> </button>
+                              <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('tripInsurance')"><b>Automobili i putovanja</b> </button>
+                            
+                       
+                              
+                </div>
+
+
+        </div>
+
+        <div class = "w3-container w3-quarter">
+
+        </div>
+
+  </div>
+
+
+  <div class = "w3-row">
+      <div class = "w3-container w3-quarter">
+
+      </div>
+
+      <div class = "w3-quarter">
+          <label class = "w3-text-gray w3-small">Pocetna>Fizicka lica>Automobili i putovanja>Kasko osiguranje> </label>
+
+      </div>
+
+      <div class = "w3-rest">
+
+      </div>
+
+  </div>
+
+
+  <br>
+  <div class = "w3-row">
+
+
+          <div class = "w3-container w3-quarter">
+          </div>
+
+          <div class = "w3-container w3-half w3-center">
+
+                  <h1 class= "w3-text-red w3-xxlarge "> KONTAKTIRAJTE NAS  </h1>
+                 
+                  <p class = "w3-text-grey w3-xlarge"><b> Ukoliko imate pitanja ili komentare - slusamo vas</b> </p>
+                  
+                  
+
+
+
+          </div>
+
+          <div class = "w3-container w3-rest  w3-padding">
+
+                  <div class = {{vrednost10}} style = "width:330px">
+                          
+                      <div class = "w3-light-gray ">
+
+                          <div class = "w3-display-topright">
+                              <button class = "w3-btn w3-red" (click)= "Ugasi()"> <i class="fa fa-close" style="font-size:24px"></i>    </button>
+
+                          </div>
+                          <h3 class= "w3-text-red w3-border-bottom w3-border-red"> Kontakt: </h3>
+                          <hr>
+                          <p>
+                              063-7546762
+                          </p>
+                          <p>
+                              besplatna linija:
+                              063:7546762
+                          </p>
+
+              
+         
+         
+                          <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)="redirectValue('/Contact')"> <b>Kontaktirajte nas</b> </button>
+                        <p></p>
+
+                      </div>
+  
+                      </div>
+
+                  <button class = "w3-btn w3-xlarge w3-circle w3-red w3-card-4 w3-right" (click) = "Promena()"> <i class="fa fa-mobile " style="font-size:24px"></i> Kontakt </button>
+                  <br> <br> <br> <br>
+                  <button class = "w3-btn w3-xlarge w3-circle w3-red w3-card-4 w3-right" (click) = "Ugasi()"> <i class="fa fa-map-marker" style="font-size:24px"></i> Lokacije </button>
+
+
+          </div>
+
+
+
+  </div>
+
+  <br>
+  <br>
+
+  <div class = "w3-row">
+
+      <div class = "w3-quarter">
+        <p> </p>
+      </div>
+
+      <div class = "w3-half "> 
+
+          <div class = " w3-left">
+            <h2>Telefonom</h2>
+            <br>
+            <label>0637546762</label>
+            <br>
+            <br>
+            <label> Besplatna linija:</label>
+            <br>
+            <br>
+            <label>0637546762</label>
+            
+
+          </div>
+
+          <div class = " w3-center">
+              <h2> Pisite nam </h2>
+              <br>
+              <label>Pisite nam na e-mail:</label>
+              <br>
+              <br>
+              <label class = "w3-text-red border-bottom border-red">luka.pavlica@sbb.rs</label>
+              <br>
+              <br>
+
+              <button class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "FunctionPromena()">Kontakt forma > </button>
+          </div>
+
+        </div>
+
+
+        <div class = "w3-quarter">
+
+
+        </div>
+
+
+  </div>
+
+  <br>
+  <br>
+
+  <div class = "w3-row">
+
+    <div class = "w3-quarter">
+
+
+        <p> </p>
+
+    </div>
+
+    <div class = {{vidi}}>
+    
+
+            <div style = "width:50%" >
+                    
+                <label class = "w3-text-gray"> <strong>Ime i prezime*</strong> </label>
+                       <br>
+                        <input type = "text" class = "w3-input w3-border" [(ngModel)]="kontaktObjekat.naziv">
+                    
+            </div>
+            <br>
+            <br>
+            <div style = "width:50%" >
+                                  
+            <label class = "w3-text-gray"> <strong>Email*</strong> </label>
+                 <br>
+                 <input type = "email" class = "w3-input w3-border" [(ngModel)]= "kontaktObjekat.email">
+                                  
+            </div>
+
+    
+            <br>
+            <br>
+            <div style = "width:50%">
+                                  
+            <label class = "w3-text-gray"> <strong>Opis</strong> </label>
+                 <br>
+                 
+                <textarea rows="10" cols="50" class = "w3-input w3-border" [(ngModel)]= "kontaktObjekat.opis">
+       
+                </textarea>
+                                  
+            </div>
+
+            <br>
+            <br>
+            <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white" (click) = "FunctionPromena2()">Ugasi</button>
+            <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white" (click) = "posaljiObjekat()"  >Posalji</button>
+        
+
+    </div>
+
+
+    <div class = "w3-quarter">
+
+
+    
+    </div>
+
+
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class = "w3-row-padding " class = "donjiDiv">
+        
+                    <div class = "w3-bar">
+                            <i class="fa fa-facebook-official w3-bar-item" style="font-size:36px"></i>
+                            <i class="fa fa-instagram w-bar-item" style="font-size:36px"></i>
+                            <i class="fa fa-linkedin-square w3-bar-item" style="font-size:36px"></i>
+                            <i class="fa fa-twitter w3-bar-item" style="font-size:36px"></i>
+                              </div>
+        
+            </div>
+
+
+
+
+</div>

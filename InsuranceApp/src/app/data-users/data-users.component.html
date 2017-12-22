@@ -1,0 +1,471 @@
+<div class = "w3-container">
+
+    <div class = "w3-row">
+        <div class = "w3-container w3-quarter w3-padding">
+    
+                <img src= "/images/logo1.jpg" style="width:100%; height:100px;">
+    
+        </div>
+    
+        <div class = "w3-container w3-half w3-padding">
+    
+                <div class = "w3-bar">
+                
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                            
+                
+                </div>
+    
+                <br>
+    
+    
+                <div class = "w3-bar w3-black ">
+                    
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectHome()"><b>Pocetna</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('about')"><b>O nama</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('Location')"><b>Lokacije</b> </button>
+                          <button class = "w3-button w3-bar-item w3-hover-red w3-padding"  (click)="redirectValue('tripInsurance')"><b>Automobili i putovanja</b> </button>
+                        
+                   
+                          
+            </div>
+    
+    
+        </div>
+    
+        <div class = "w3-container w3-quarter">
+    
+        </div>
+    
+    </div>
+
+
+
+<div class = "w3-row">
+    <div class = "w3-container w3-quarter">
+  
+    </div>
+  
+    <div class = "w3-quarter">
+        <label class = "w3-text-gray w3-small">Pocetna>Web osiguranje>Putno osiguranje </label>
+  
+    </div>
+  
+    <div class = "w3-rest">
+  
+    </div>
+  
+  </div>
+
+  
+
+<br>
+
+<div class = "w3-row">
+  
+  
+            <div class = "w3-container w3-quarter">
+            </div>
+  
+            <div class = "w3-container w3-half w3-center">
+  
+                    <h1 class= "w3-text-red w3-xxlarge ">  PUTNO OSIGURANJE  </h1>
+                
+            </div>
+  
+            <div class = "w3-container w3-rest  w3-padding">
+  
+                   <p> </p>
+  
+  
+            </div>
+  
+  
+  
+    </div>
+
+ <br>
+
+
+<div class = "w3-row">
+    
+            <div class = "w3-col" style = "width:16%">
+    
+              <p> </p>
+    
+            </div>
+    
+    
+            <div class = "w3-col" style ="width:68%">
+    
+                
+                <div class = "w3-bar w3-border w3-light-gray w3-padding" style = "width:100%">
+    
+                    <div class = "w3-bar-item w3-padding ">
+    
+                      <br>
+                      <h3><b>Podaci za proracun</b></h3>
+    
+    
+                    </div>
+    
+                    <div class = "w3-bar-item w3-padding">
+                        
+                      <br>
+                      <h3><b>Cena</b></h3>
+                        
+                        
+                   </div>
+    
+                   <div class = "w3-bar-item w3-padding w3-bottombar w3-border-red">
+                    
+                  <br>
+                  <h3><b>Podaci</b></h3>
+                    
+                    
+               </div>
+    
+                   <div class = "w3-bar-item w3-padding">
+                      
+                    <br>
+                    <h3><b>Podaci o nosiocu osiguranja</b></h3>
+                      
+                      
+                 </div>
+    
+                 <div class = "w3-bar-item">
+                    
+                  <br>
+                  <h3><b>Porudzbina</b></h3>
+                    
+                    
+               </div>
+    
+                </div>
+    
+    
+            </div>
+    
+            <div class = "w3-col" style = "width:16%">
+    
+                <p>
+                    </p>
+    
+            </div> 
+    
+    
+    
+    
+        </div>
+  
+      <br>
+      <br>
+
+
+          <div class = "w3-row">
+
+
+
+                <div class = "w3-quarter">
+
+                    <p> </p>
+                </div>
+
+                <div class = "w3-half">
+
+                    <div *ngIf="!pokazivac" class = "w3-content" >
+
+                           <div *ngFor = "let i of brojevi; let i = index">
+
+
+                                        <div class = "w3-border-bottom w3-border-gray" style = "width:90%">
+                                            <strong> Podaci o {{i+1}}. korisniku</strong>
+                                        </div>
+        
+                                        <br>
+                                        <br>
+
+                                        <div style = "width:50%">
+                                                
+                                            <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
+                                            <br>
+                                            <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.imeNosilaca[i]">
+                                                
+                                        </div>
+                                            <br>
+                                            <br>
+                                        <div style = "width:50%">
+                                                              
+                                            <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
+                                            <br>
+                                            <input type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNizNosioci.prezimeNosilac[i]">
+                                                              
+                                            </div>
+                                                
+                                                
+                                            <br>
+                                            <br>
+
+                                            <div style = "width:50%">
+                                                    
+                                            <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
+                                            <br>
+                                             <input type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNizNosioci.jmbgNosilac[i]">
+                                                    
+                                            </div>
+                                    
+                                    
+                                            <br>
+                                            <br>
+                                          <div style = "width:50%">
+                                                      
+                                            <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
+                                             <br>
+                                             <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.pasosNosilac[i]">
+                                                      
+                                             </div>
+
+                                             <br>
+                                             <br>
+                                               <div style = "width:50%">
+                                                 
+                                                 <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
+                                                 <br>
+                                                  <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.adresaNosilac[i]">
+                                                 
+                                               </div>
+                               
+                             
+                                               <br>
+                                               <br>
+                                                 <div style = "width:50%">
+                                                   
+                                                   <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
+                                                   <br>
+                                                    <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.telefonNosilac[i]">
+                                                   
+                                                 </div>
+
+                                                 <br>
+                                                 <br>
+
+                                                 
+
+                            </div>
+
+
+                            <br>
+                            <br>
+        
+                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject2()">Nazad </button>
+                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject2()">Odustani od kupovine </button>
+                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueContinueWithObject2()">Nastavi sa kupovinom </button>
+                   
+
+
+                      </div>
+
+
+                      <div *ngIf = "pokazivac" class = "w3-content" >
+                            
+                        <div class = "w3-border-bottom w3-border-gray" style = "width:90%">
+                            <strong> Nosilac osiguranja </strong>
+                        </div>
+                
+                        <br>
+                         <br>  
+                            
+                        <div style = "width:50%">
+                                
+                                <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
+                                    <br>
+                                <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.imeNosilac">
+                                
+                            </div>
+                                          <br>
+                                          <br>
+                                            <div style = "width:50%">
+                                              
+                                              <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
+                                          <br>
+                                               <input type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNosilac.prezimeNosilac">
+                                              
+                                            </div>
+                 
+                                
+                                            <br>
+                                            <br>
+                                              <div style = "width:50%">
+                                                
+                                                <label class = "w3-text-gray"> <strong>Email*</strong> </label>
+                                                <br>
+                                                 <input type = "email" class = "w3-input w3-border" [(ngModel)]="modelNosilac.emailNosilac">
+                                                
+                                              </div>
+                                
+                                            <br>
+                                            <br>
+
+                                            <div style = "width:50%">
+                                                
+                                                <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
+                                                <br>
+                                                 <input type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNosilac.jmbgNosilac">
+                                                
+                                              </div>
+                                
+                                
+                                              <br>
+                                              <br>
+                                                <div style = "width:50%">
+                                                  
+                                                  <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
+                                                  <br>
+                                                   <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.pasosNosilac">
+                                                  
+                                                </div>
+                                
+                                
+                                                <br>
+                                                <br>
+
+
+                                                <div style = "width:50%">
+                                                    
+                                                    <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
+                                                    <br>
+                                                     <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.adresaNosilac">
+                                                    
+                                                  </div>
+                                  
+                                
+                                                  <br>
+                                                  <br>
+                                                    <div style = "width:50%">
+                                                      
+                                                      <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
+                                                      <br>
+                                                       <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.telefonNosilac">
+                                                      
+                                                    </div>
+                                
+                                                    <br>
+                                                    <br>
+                            
+                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject()">Nazad </button>
+                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani od kupovine </button>
+                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueContinueWithObject()">Nastavi sa kupovinom </button>
+                    
+
+
+                      </div>
+
+                </div> 
+                
+
+                <div class = "w3-quarter">
+                    
+                  <p> </p>
+                 </div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+  
+      <div class = "w3-row">
+  
+  
+          <div class = "w3-quarter">
+            <p> </p>
+          </div>
+  
+          <div class = "w3-half w3-display-container">
+  
+            <div class = "w3-display-left">
+  
+              <div class = "w3-bar">
+  
+                  <i class="fa fa-cc-mastercard w3-bar-item " style="font-size:60px;"></i>
+                  <i class="fa fa-cc-visa w3-bar-item" style="font-size:60px;"></i>
+                  <i class="fa fa-cc-diners-club w3-bar-item" style="font-size:60px;"></i>
+  
+              </div>
+          
+                
+            </div>
+  
+            <div class = "w3-display-middle">
+                <div class = "w3-bar">
+                    <i class="fa fa-cc-paypal w3-bar-item" style="font-size:60px;"></i>
+                    <i class="fa fa-credit-card w3-bar-item" style="font-size:60px;"></i>
+                    
+                </div>
+            </div>
+  
+            <div class = "w3-display-right">
+                <div class = "w3-bar">
+                    <i class="fa fa-paypal w3-bar-item" style="font-size:60px;"></i>
+                    
+                    
+                </div>
+            </div>
+  
+          </div>
+  
+  
+          <div class = "w3-quarter">
+  
+  
+          </div>
+  
+  
+  
+  
+      </div>
+  
+  
+      <br>
+      
+          <div class = "w3-row-padding">
+      
+                  <div class = "w3-bar">
+                          <i class="fa fa-facebook-official w3-bar-item" style="font-size:36px"></i>
+                          <i class="fa fa-instagram w-bar-item" style="font-size:36px"></i>
+                          <i class="fa fa-linkedin-square w3-bar-item" style="font-size:36px"></i>
+                          <i class="fa fa-twitter w3-bar-item" style="font-size:36px"></i>
+                            </div>
+      
+          </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
