@@ -30,6 +30,7 @@ datum:string;
 
     redirectValue(vrednost) {
 
+      this.serv2.backPutno();
       this.route.navigate(['/'+vrednost]);
 
     }

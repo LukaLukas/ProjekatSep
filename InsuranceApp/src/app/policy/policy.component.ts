@@ -41,7 +41,16 @@ export class PolicyComponent implements OnInit {
       this.route.navigate(['/InfoTrip']);
   }
 
-  redirectValueContinueWithObject() {
+  redirectValueContinueWithObject(val1, val2, val3, val4, val5, val6, val7) {
+
+
+      this.modelNosilac.imeNosilac = val1.value;
+      this.modelNosilac.prezimeNosilac = val2.value;
+      this.modelNosilac.emailNosilac = val3.value;
+      this.modelNosilac.jmbgNosilac = val4.value;
+      this.modelNosilac.pasosNosilac = val5.value;
+      this.modelNosilac.adresaNosilac = val6.value;
+      this.modelNosilac.telefonNosilac = val7.value;
 
       this.serv3.setValueNosilac(this.modelNosilac);
 
@@ -64,6 +73,8 @@ export class PolicyComponent implements OnInit {
 
     this.modelNosilac = this.serv3.getNosilac();
     this.modelNizNosioci = this.serv3.getNizNosioci();
+
+    //console.log(this.modelNizNosioci.imeNosilaca);
   }
 
 }

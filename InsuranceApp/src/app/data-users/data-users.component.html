@@ -175,94 +175,107 @@
                 <div class = "w3-half">
 
                     <div *ngIf="!pokazivac" class = "w3-content" >
+                            <form class = "w3-container" #myForm3="ngForm" style = "width:50%;"> 
 
-                           <div *ngFor = "let i of brojevi; let i = index">
 
-
-                                        <div class = "w3-border-bottom w3-border-gray" style = "width:90%">
-                                            <strong> Podaci o {{i+1}}. korisniku</strong>
-                                        </div>
-        
-                                        <br>
-                                        <br>
-
-                                        <div style = "width:50%">
-                                                
-                                            <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
-                                            <br>
-                                            <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.imeNosilaca[i]">
-                                                
-                                        </div>
-                                            <br>
-                                            <br>
-                                        <div style = "width:50%">
-                                                              
-                                            <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
-                                            <br>
-                                            <input type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNizNosioci.prezimeNosilac[i]">
-                                                              
-                                            </div>
-                                                
-                                                
-                                            <br>
-                                            <br>
-
-                                            <div style = "width:50%">
+                                    <div *ngFor = "let i of brojevi; let i = index">
+                                            
+                                            
+                                                                                    <div class = "w3-border-bottom w3-border-gray">
+                                                                                        <strong> Podaci o {{i+1}}. korisniku</strong>
+                                                                                    </div>
                                                     
-                                            <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
-                                            <br>
-                                             <input type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNizNosioci.jmbgNosilac[i]">
-                                                    
-                                            </div>
-                                    
-                                    
-                                            <br>
-                                            <br>
-                                          <div style = "width:50%">
-                                                      
-                                            <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
-                                             <br>
-                                             <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.pasosNosilac[i]">
-                                                      
-                                             </div>
+                                                                                    <br>
+                                                                                    <br>
+                                            
+                                                                                    <div>
+                                                                                            
+                                                                                       <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
+                                                                                        <br>
+                                                                                        <input required  type = "text"  class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.imeNosilaca[i]" [ngModelOptions]="{standalone: true}">
+                                                                                         
+                                                                                    </div>
 
-                                             <br>
-                                             <br>
-                                               <div style = "width:50%">
-                                                 
-                                                 <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
-                                                 <br>
-                                                  <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.adresaNosilac[i]">
-                                                 
-                                               </div>
-                               
-                             
-                                               <br>
-                                               <br>
-                                                 <div style = "width:50%">
-                                                   
-                                                   <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
-                                                   <br>
-                                                    <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.telefonNosilac[i]">
-                                                   
-                                                 </div>
+                                                                                    
 
-                                                 <br>
-                                                 <br>
+                                                                                        <br>
+                                                                                        <br>
+                                                                                    <div >
+                                                                                                          
+                                                                                        <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
+                                                                                        <br>
+                                                                                        <input required type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNizNosioci.prezimeNosilac[i]" [ngModelOptions]="{standalone: true}">
+                                                                                                          
+                                                                                        </div>
+                                                                                            
+                                                                                            
+                                                                                        <br>
+                                                                                        <br>
+                                            
+                                                                                        <div>
+                                                                                                
+                                                                                        <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
+                                                                                        <br>
+                                                                                         <input required type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNizNosioci.jmbgNosilac[i]" [ngModelOptions]="{standalone: true}">
+                                                                                                
+                                                                                        </div>
+                                                                                
+                                                                                
+                                                                                        <br>
+                                                                                        <br>
+                                                                                      <div >
+                                                                                                  
+                                                                                        <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
+                                                                                         <br>
+                                                                                         <input required  type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.pasosNosilac[i]" [ngModelOptions]="{standalone: true}">
+                                                                                         
+                                                                                                  
+                                                                                         </div>
+                                            
+                                                                                         <br>
+                                                                                         <br>
+                                                                                           <div>
+                                                                                             
+                                                                                             <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
+                                                                                             <br>
+                                                                                              <input required type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.adresaNosilac[i]" [ngModelOptions]="{standalone: true}">
+                                                                                              
+                                                                                             
+                                                                                           </div>
+                                                                           
+                                                                         
+                                                                                           <br>
+                                                                                           <br>
+                                                                                             <div>
+                                                                                               
+                                                                                               <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
+                                                                                               <br>
+                                                                                                <input required type = "text" class = "w3-input w3-border" [(ngModel)]="modelNizNosioci.telefonNosilac[i]" [ngModelOptions]="{standalone: true}">
+                                                                                               
+                                                                                             </div>
+                                            
+                                                                                             <br>
+                                                                                             <br>
 
-                                                 
+                                            
+                                                                                             
+                                            
+                                                                        </div>                              
 
-                            </div>
+
+                                                                        <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject2()">Nazad </button>
+                                                                        <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject2()">Odustani od kupovine </button>
+                                                                        <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white" [disabled]="!myForm3.form.valid"  (click)= "redirectValueContinueWithObject2()">Nastavi sa kupovinom </button>
 
 
-                            <br>
-                            <br>
-        
-                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject2()">Nazad </button>
-                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject2()">Odustani od kupovine </button>
-                            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueContinueWithObject2()">Nastavi sa kupovinom </button>
-                   
 
+
+
+
+                            </form>
+                           
+                           
+                          
 
                       </div>
 
@@ -275,88 +288,131 @@
                 
                         <br>
                          <br>  
-                            
-                        <div style = "width:50%">
+
+                        <form class = "w3-container" #myForm2="ngForm" style = "width:50%;">
+
+                            <br>
+                            <p>
+
+                                    <label class = "w3-text-gray" for="imeNosioc"> <strong> Ime* </strong>  </label>
+                                   <input  required ngModel class="w3-input w3-border" id = "imeNosioc" name="imeNosioc" #imeNosioc="ngModel"  type="text" > 
+                      
+
+
+                            </p>
+                            <div  class = "w3-panel" *ngIf="imeNosioc.touched && !imeNosioc.valid">
+                                    <div *ngIf="imeNosioc.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti ime nosioca </label></div>
+                
+                                </div> 
                                 
-                                <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
-                                    <br>
-                                <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.imeNosilac">
+                            <br>
+
+                            <p>
+                                <label class = "w3-text-gray" for="prezimeNosioc"> <strong> Prezime*</strong> </label>
+                                <input required ngModel class = "w3-input w3-border" id="prezimeNosioc" name="prezimeNosioc" #prezimeNosioc="ngModel" type="text">
+
+
+                            </p>
+                            <div class = "w3-panel" *ngIf="prezimeNosioc.touched && !prezimeNosioc.valid">
+
+                                <div *ngIf="prezimeNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti prezime nosioca </label> </div>
+
                                 
                             </div>
-                                          <br>
-                                          <br>
-                                            <div style = "width:50%">
-                                              
-                                              <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
-                                          <br>
-                                               <input type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNosilac.prezimeNosilac">
-                                              
-                                            </div>
-                 
-                                
-                                            <br>
-                                            <br>
-                                              <div style = "width:50%">
-                                                
-                                                <label class = "w3-text-gray"> <strong>Email*</strong> </label>
-                                                <br>
-                                                 <input type = "email" class = "w3-input w3-border" [(ngModel)]="modelNosilac.emailNosilac">
-                                                
-                                              </div>
-                                
-                                            <br>
-                                            <br>
+                            <br>
 
-                                            <div style = "width:50%">
-                                                
-                                                <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
-                                                <br>
-                                                 <input type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNosilac.jmbgNosilac">
-                                                
-                                              </div>
-                                
-                                
-                                              <br>
-                                              <br>
-                                                <div style = "width:50%">
-                                                  
-                                                  <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
-                                                  <br>
-                                                   <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.pasosNosilac">
-                                                  
-                                                </div>
-                                
-                                
-                                                <br>
-                                                <br>
+                            <p>
+                                    <label class = "w3-text-gray" for="emailNosioc"> <strong> Email*</strong> </label>
+                                    <input required ngModel class = "w3-input w3-border" id="emailNosioc" name="emailNosioc" #emailNosioc="ngModel" type="email">
+    
+    
+                                </p>
+                                <div class = "w3-panel" *ngIf="emailNosioc.touched && !emailNosioc.valid">
+    
+                                    <div *ngIf="emailNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti email nosioca </label> </div>
+                                    
+                                    
+                                </div>
+                                <br>
 
+                                
 
-                                                <div style = "width:50%">
-                                                    
-                                                    <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
-                                                    <br>
-                                                     <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.adresaNosilac">
-                                                    
-                                                  </div>
-                                  
-                                
-                                                  <br>
-                                                  <br>
-                                                    <div style = "width:50%">
-                                                      
-                                                      <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
-                                                      <br>
-                                                       <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.telefonNosilac">
-                                                      
-                                                    </div>
-                                
-                                                    <br>
-                                                    <br>
+                            <p>
+                                    <label class = "w3-text-gray" for="jmbgNosioc"> <strong> JMBG*</strong> </label>
+                                    <input required ngModel class = "w3-input w3-border" id="jmbgNosioc" name="jmbgNosioc" #jmbgNosioc="ngModel" type="number" size="13">
+    
+    
+                                </p>
+                                <div class = "w3-panel" *ngIf="jmbgNosioc.touched && !jmbgNosioc.valid">
+    
+                                    <div *ngIf="jmbgNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti jmbg nosioca </label> </div>
+                                    <div *ngIf="jmbgNosioc.errors.size" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti 13 cifara </label> </div>
+                                    
+                                    
+                                </div>
+                                <br>
+
                             
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject()">Nazad </button>
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani od kupovine </button>
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueContinueWithObject()">Nastavi sa kupovinom </button>
-                    
+                                <p>
+                                        <label class = "w3-text-gray" for="pasosNosioc"> <strong> Broj pasosa*</strong> </label>
+                                        <input required ngModel class = "w3-input w3-border" id="pasosNosioc" name="pasosNosioc" #pasosNosioc="ngModel" type="number">
+        
+        
+                                    </p>
+                                    <div class = "w3-panel" *ngIf="pasosNosioc.touched && !pasosNosioc.valid">
+        
+                                        <div *ngIf="pasosNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti broj pasosa nosioca </label> </div>
+                                        
+                                        
+                                    </div>
+                                    <br>
+
+
+
+                                <p>
+                                        <label class = "w3-text-gray" for="adresaNosioc"> <strong> Adresa*</strong> </label>
+                                        <input required ngModel class = "w3-input w3-border" id="adresaNosioc" name="adresaNosioc" #adresaNosioc="ngModel" type="text">
+        
+        
+                                    </p>
+                                    <div class = "w3-panel" *ngIf="adresaNosioc.touched && !adresaNosioc.valid">
+        
+                                        <div *ngIf="adresaNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti adresu nosioca </label> </div>
+                                        
+                                        
+                                    </div>
+                                    <br>
+
+
+                                    <p>
+                                            <label class = "w3-text-gray" for="telefonNosioc"> <strong> Telefon*</strong> </label>
+                                            <input required ngModel class = "w3-input w3-border" id="telefonNosioc" name="telefonNosioc" #telefonNosioc="ngModel" type="text">
+            
+            
+                                        </p>
+                                        <div class = "w3-panel" *ngIf="telefonNosioc.touched && !telefonNosioc.valid">
+            
+                                            <div *ngIf="telefonNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti telefon nosioca </label> </div>
+                                            
+                                            
+                                        </div>
+                                        <br>
+
+                                        <p>
+
+                                                <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject()">Nazad </button>
+                                                <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani od kupovine </button>
+                                                <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white" [disabled]="!myForm2.form.valid" (click)= "redirectValueContinueWithObject(imeNosioc, prezimeNosioc, emailNosioc, jmbgNosioc, pasosNosioc, adresaNosioc, telefonNosioc)">Nastavi sa kupovinom </button>
+
+
+                                        </p>
+    
+
+
+
+
+
+                        </form>
 
 
                       </div>

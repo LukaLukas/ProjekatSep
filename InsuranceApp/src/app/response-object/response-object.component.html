@@ -1,0 +1,132 @@
+<div class = "w3-container w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:700px">
+
+
+
+    <div ><br>
+      <span (click)= "ugasi()" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+    
+    </div>
+
+    <div class = "w3-row">
+        
+        
+                  <div class = "w3-container w3-quarter">
+                  </div>
+        
+                  <div class = "w3-container w3-half w3-center">
+        
+                          <h1 class= "w3-text-gray w3-xxlarge ">  {{modelResponse.nacin}}  </h1>
+                      
+                  </div>
+        
+                  <div class = "w3-container w3-rest  w3-padding">
+        
+                         <p> </p>
+        
+        
+                  </div>
+        
+        
+        
+          </div>
+
+          <br>
+          <br>
+
+          <div class = "w3-row">
+            <div class = "w3-third">
+              <p> </p>
+
+            </div>
+
+            <div class = "w3-third">
+                
+                  <div *ngIf="modelResponse.code == 200">
+
+                    <label class = "w3-text-green w3-xlarge"> {{modelResponse.opis}} </label>
+
+                  </div>
+
+                  <div *ngIf="modelResponse.code == 404">
+                      
+                                          <label class = "w3-text-red w3-xlarge"> {{modelResponse.opis}} </label>
+                      
+                </div>
+
+                <div *ngIf = "modelResponse.code == 405">
+
+                    <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+
+                </div>
+
+                <div *ngIf = "modelResponse.code == 406">
+                    
+                                        <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                    
+                  </div>
+
+
+                  <div *ngIf = "modelResponse.code == 407">
+                      
+                                <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                      
+                          </div>
+
+
+                          <div *ngIf = "modelResponse.code == 408">
+                              
+                            <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                              
+                              </div>
+
+
+                              <div *ngIf = "modelResponse.code == 409">
+                                  
+                              <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                              <br>
+
+                              <label class = "w3-text-gray w3-large"> JMBG mora sadrzati 13 cifara  </label>
+                                  
+                              </div>
+
+
+
+                              <div *ngIf = "modelResponse.code == 410">
+                                  
+                                                      <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                                                      <br>
+                                                      
+                                                      <label class = "w3-text-gray w3-large"> JMBG mora sadrzati 13 cifara  </label>
+                                                                                        
+                                                  </div>
+                                                    
+                                                    
+                              <div *ngIf = "modelResponse.code == 412">
+                                                      
+                                <label class = "w3-text-red w3-large"> {{modelResponse.opis}}  </label>
+                                <br>
+                                
+                                 <label class = "w3-text-gray w3-large"> JMBG mora sadrzati 13 cifara  </label>
+                                                                  
+                                                      
+                                </div>
+                                                                                                   
+                                        
+                                      
+                  
+
+              
+  
+              </div>
+
+              <div class = "w3-third">
+
+              </div>
+
+
+          </div>
+
+
+
+
+</div>

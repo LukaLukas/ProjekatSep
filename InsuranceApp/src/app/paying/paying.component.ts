@@ -7,6 +7,11 @@ import {NizNosioci} from '../niz-nosioci';
 import {PutObject} from '../put-object';
 import {PutnoObject} from '../putno-object';
 import {StambenoObject} from '../stambeno-object';
+import {Response} from '../response';
+
+
+import {ResponseObjekat} from '../response-objekat'
+
 
 
 @Component({
@@ -24,32 +29,52 @@ export class PayingComponent implements OnInit {
     Put:PutObject;
     Putno:PutnoObject;
     Stambeno: StambenoObject;
+    statusCode: number;
+    modelResponse : ResponseObjekat;
   
   redirectValueBackWithObject() {
     
           this.route.navigate(['/CostInsuranceTrip']);
-    
+
       }
 
       goPayPal() {
-          this.serv.goPayPal(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
-          .catch(err => console.log(err));
+          this.serv.goPayPalUnion(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
+          .then(data => this.modelResponse = data);
+          document.getElementById('id3').style.display='block';
+         // setTimeout(function(){ this.redirect(); }, 5000);
+     
+       
 
       }
 
       goAscquier() {
 
-          this.serv.goAscquier(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
-          .catch(err => console.log(err));
+          this.serv.goAscquierUnion(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
+          .then(data => this.modelResponse = data);
+          document.getElementById('id3').style.display='block';
+         // setTimeout(function(){ this.redirect }, 5000);
+        
+      
 
       }
 
       goPos() {
 
-          this.serv.goPOS(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
-          .catch(err => console.log(err));
+          this.serv.goPOSUnion(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
+          .then(data => this.modelResponse = data);
+          document.getElementById('id3').style.display='block';
+
+         
+
+         // setTimeout(function(){ this.route.navigate(['/InfoTrip']); }, 5000);
+          
+        //  this.route.navigate(['/InfoTrip']);
 
       }
+
+
+
     
       redirectValueCloseWithObject() {
     
@@ -71,8 +96,22 @@ export class PayingComponent implements OnInit {
     this.Put = this.serv2.getObjectPut();
     this.Putno = this.serv2.getObjectPutno();
     this.Stambeno = this.serv2.getObjectStambeno();
+    this.modelResponse = new Response();
+   // this.modelResponse = this.serv2.getOdgovor();
+
+   // console.log(this.Nosioci.imeNosilaca);
 
 
   }
 
+
+
+
+
+
+
+
+
+
 }
+

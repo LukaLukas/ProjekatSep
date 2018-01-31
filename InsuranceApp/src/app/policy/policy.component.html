@@ -171,94 +171,141 @@
 
       </div>
 
-      <div class = "w3-half">
+      <div class = "w3-half w3-content">
 
-            <div class = "w3-border-bottom w3-border-gray" style = "width:90%">
-            <strong> Nosilac osiguranja </strong>
-            </div>
-
-            <br>
-            <br>
-
-
-          <div style = "width:50%">
-
-              <label class = "w3-text-gray"> <strong>Ime*</strong> </label>
-              <br>
-              <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.imeNosilac">
-
+             
+          <div class = "w3-border-bottom w3-border-gray" style = "width:90%">
+              <strong> Nosilac osiguranja </strong>
           </div>
-          <br>
-          <br>
-            <div style = "width:50%">
-              
-              <label class = "w3-text-gray"> <strong>Prezime*</strong> </label>
-              <br>
-               <input type = "text" class = "w3-input w3-border"   [(ngModel)]="modelNosilac.prezimeNosilac">
-              
-            </div>
-
-
-            <br>
-            <br>
-              <div style = "width:50%">
-                
-                <label class = "w3-text-gray"> <strong>Email*</strong> </label>
-                <br>
-                 <input type = "email" class = "w3-input w3-border" [(ngModel)]="modelNosilac.emailNosilac">
-                
-              </div>
-
-            <br>
-            <br>
-              <div style = "width:50%">
-                
-                <label class = "w3-text-gray"> <strong>Maticni broj (JMBG)*</strong> </label>
-                <br>
-                 <input type = "text" class = "w3-input w3-border" [(ngModel)]= "modelNosilac.jmbgNosilac">
-                
-              </div>
-
-
-              <br>
-              <br>
-                <div style = "width:50%">
-                  
-                  <label class = "w3-text-gray"> <strong>Broj pasosa*</strong> </label>
-                  <br>
-                   <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.pasosNosilac">
-                  
-                </div>
-
-
-                <br>
-                <br>
-                  <div style = "width:50%">
-                    
-                    <label class = "w3-text-gray"> <strong>Adresa*</strong> </label>
-                    <br>
-                     <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.adresaNosilac">
-                    
-                  </div>
   
+          <br>
+           <br>  
 
-                  <br>
-                  <br>
-                    <div style = "width:50%">
+          <form class = "w3-container" #myForm6="ngForm" style = "width:50%;">
+
+              <br>
+              <p>
+
+                      <label class = "w3-text-gray" for="policyImeNosioc"> <strong> Ime* </strong>  </label>
+                     <input  required ngModel class="w3-input w3-border" id = "policyImeNosioc" name="policyImeNosioc" #policyImeNosioc="ngModel"  type="text" > 
+        
+
+
+              </p>
+              <div  class = "w3-panel" *ngIf="policyImeNosioc.touched && !policyImeNosioc.valid">
+                      <div *ngIf="policyImeNosioc.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti ime nosioca </label></div>
+  
+                  </div> 
+                  
+              <br>
+
+              <p>
+                  <label class = "w3-text-gray" for="policyPrezimeNosioc"> <strong> Prezime*</strong> </label>
+                  <input required ngModel class = "w3-input w3-border" id="policyPrezimeNosioc" name="policyPrezimeNosioc" #policyPrezimeNosioc="ngModel" type="text">
+
+
+              </p>
+              <div class = "w3-panel" *ngIf="policyPrezimeNosioc.touched && !policyPrezimeNosioc.valid">
+
+                  <div *ngIf="policyPrezimeNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti prezime nosioca </label> </div>
+
+                  
+              </div>
+              <br>
+
+              <p>
+                      <label class = "w3-text-gray" for="policyEmailNosioc"> <strong> Email*</strong> </label>
+                      <input required ngModel class = "w3-input w3-border" id="policyEmailNosioc" name="policyEmailNosioc" #policyEmailNosioc="ngModel" type="email">
+
+
+                  </p>
+                  <div class = "w3-panel" *ngIf="policyEmailNosioc.touched && !policyEmailNosioc.valid">
+
+                      <div *ngIf="policyEmailNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti email nosioca </label> </div>
                       
-                      <label class = "w3-text-gray"> <strong>Broj telefona*</strong> </label>
+                      
+                  </div>
+                  <br>
+
+                  
+
+              <p>
+                      <label class = "w3-text-gray" for="policyJmbgNosioc"> <strong> JMBG*</strong> </label>
+                      <input required ngModel class = "w3-input w3-border" id="policyJmbgNosioc" name="policyJmbgNosioc" #policyJmbgNosioc="ngModel" type="number" size="13">
+
+
+                  </p>
+                  <div class = "w3-panel" *ngIf="policyJmbgNosioc.touched && !policyJmbgNosioc.valid">
+
+                      <div *ngIf="policyJmbgNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti jmbg nosioca </label> </div>
+                      <div *ngIf="policyJmbgNosioc.errors.size" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti 13 cifara </label> </div>
+                      
+                      
+                  </div>
+                  <br>
+
+              
+                  <p>
+                          <label class = "w3-text-gray" for="policyPasosNosioc"> <strong> Broj pasosa*</strong> </label>
+                          <input required ngModel class = "w3-input w3-border" id="policyPasosNosioc" name="policyPasosNosioc" #policyPasosNosioc="ngModel" type="number">
+
+
+                      </p>
+                      <div class = "w3-panel" *ngIf="policyPasosNosioc.touched && !policyPasosNosioc.valid">
+
+                          <div *ngIf="policyPasosNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti broj pasosa nosioca </label> </div>
+                          
+                          
+                      </div>
                       <br>
-                       <input type = "text" class = "w3-input w3-border" [(ngModel)]="modelNosilac.telefonNosilac">
-                      
-                    </div>
 
-                    <br>
-                    <br>
 
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject()">Nazad </button>
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani od kupovine </button>
-                    <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueContinueWithObject()">Nastavi sa kupovinom </button>
-                    
+
+                  <p>
+                          <label class = "w3-text-gray" for="policyAdresaNosioc"> <strong> Adresa*</strong> </label>
+                          <input required ngModel class = "w3-input w3-border" id="policyAdresaNosioc" name="policyAdresaNosioc" #policyAdresaNosioc="ngModel" type="text">
+
+
+                      </p>
+                      <div class = "w3-panel" *ngIf="policyAdresaNosioc.touched && !policyAdresaNosioc.valid">
+
+                          <div *ngIf="policyAdresaNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti adresu nosioca </label> </div>
+                          
+                          
+                      </div>
+                      <br>
+
+
+                      <p>
+                              <label class = "w3-text-gray" for="policyTelefonNosioc"> <strong> Telefon*</strong> </label>
+                              <input required ngModel class = "w3-input w3-border" id="policyTelefonNosioc" name="policyTelefonNosioc" #policyTelefonNosioc="ngModel" type="text">
+
+
+                          </p>
+                          <div class = "w3-panel" *ngIf="policyTelefonNosioc.touched && !policyTelefonNosioc.valid">
+
+                              <div *ngIf="policyTelefonNosioc.errors.required" style="width:70%;"> <label class = "w3-text-red w3-large"> Morate uneti telefon nosioca </label> </div>
+                              
+                              
+                          </div>
+                          <br>
+
+                          <p>
+
+                                  <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueBackWithObject()">Nazad </button>
+                                  <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani od kupovine </button>
+                                  <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white" [disabled]="!myForm6.form.valid" (click)= "redirectValueContinueWithObject(policyImeNosioc, policyPrezimeNosioc, policyEmailNosioc, policyJmbgNosioc, policyPasosNosioc, policyAdresaNosioc, policyTelefonNosioc)">Nastavi sa kupovinom </button>
+
+
+                          </p>
+
+
+
+
+
+
+          </form>
+
       </div>
 
 

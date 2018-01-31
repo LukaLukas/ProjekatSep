@@ -43,173 +43,211 @@
                   <p> </p>
                 </div>
     
-                <div class = "w3-half">
+                <div class = "w3-half w3-content">
                   
+                    <form class = "w3-container" #myForm4="ngForm">
+
+                        <br>
+                        <p>
+
+                                <label class = "w3-text-gray" for="imePrezimeKasko"> <strong> Ime i prezime vlasnika </strong>  </label>
+                               <input  required ngModel class="w3-input w3-border" id = "imePrezimeKasko" name="imePrezimeKasko" #imePrezimeKasko="ngModel"  type="text" > 
+                  
+
+
+                        </p>
+                        <div  class = "w3-panel" *ngIf="imePrezimeKasko.touched && !imePrezimeKasko.valid">
+                                <div *ngIf="imePrezimeKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti ime i prezime  </label></div>
+            
+                            </div> 
+                            
+                        <br>
+
+                        <p>
+                            
+                             <label class = "w3-text-gray" for="jmbgKasko"> <strong> JMBG vlasnika </strong>  </label>
+                              <input  required minlength="13" maxlength="13" ngModel class="w3-input w3-border" id = "jmbgKasko" name="jmbgKasko" #jmbgKasko="ngModel"  type="number" > 
+                                
+                              </p>
+                              <div  class = "w3-panel" *ngIf="jmbgKasko.touched && !jmbgKasko.valid">
+                               <div *ngIf="jmbgKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti jmbg  </label></div>
+                               <div *ngIf="jmbgKasko.errors.minlength" style="width:70%;">  <label class = "w3-text-red"> Nedostaju cifre  </label></div>
+                               <div *ngIf="jmbgKasko.errors.maxlength" style="width:70%;">  <label class = "w3-text-red"> Previse cifara  </label></div>
+                               
+                                </div> 
+                                                        
+                              <br>
+
+
+                              <p>
+                                  
+                                   <label class = "w3-text-gray" for="trajanjeKasko"> <strong> Trajanje osiguranja (u danima) </strong>  </label>
+                                    <input  required  ngModel class="w3-input w3-border" id = "trajanjeKasko" name="trajanjeKasko" #trajanjeKasko="ngModel"  type="number" > 
+                                      
+                                    </p>
+                                    <div  class = "w3-panel" *ngIf="trajanjeKasko.touched && !trajanjeKasko.valid">
+                                     <div *ngIf="trajanjeKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti trajanje osiguranja  </label></div>
+                                     
+                                      </div> 
+                                                              
+                                    <br>
+
+                                     <p>
+                                 <label class = "w3-text-gray" for="paketKasko"> <strong> Paket </strong>  </label>
+                                <br>
+                              <select   class="w3-select w3-border" id = "paketKasko" name="paketKasko" #selectPak (change)="setNewPak(selectPak.value)" > 
+                                  <option *ngFor = "let a of pakets" value = {{a.value}}> {{a.label}} </option>
+                                <!--<option value="prvi">Option 1</option>
+                              <option value="drugi">Option 2</option>
+                            <option value="treci">Option 3</option> -->
+                            </select>
+                            </p>
                 
-                    <div class = "w3-container">
-                        
-                       <label class = "w3-text-gray"><strong>Ime i prezime vlasnika</strong> </label>
-                      <br>
-                      
-                       <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.imePrezimeVlasnik">      
+                      <!--  <div class = "w3-panel" *ngIf="paketKasko.touched && !paketKasko.valid">
+                          <div *ngIf="paketKasko.errors.required" style="width:70%;">  <label class = "w3-text-red "> Morate uneti paket </label></div>
+
+
+                        </div> -->
+
+
+            
+                <br>
+
+                <p>
+                    
+                     <label class = "w3-text-gray" for="kilometrazaKasko"> <strong>Kilometraza slepovanja </strong>  </label>
+                      <!--<input  required  ngModel class="w3-input w3-border" id = "kilometrazaKasko" name="kilometrazaKasko" #kilometrazaKasko="ngModel"  type="number" >  -->
+                      <select   class="w3-select w3-border" id = "kilometrazaKasko" name="kilometrazaKasko" #selectKilo (change)="setNewSlep(selectKilo.value)" > 
+                          <option *ngFor = "let b of sleps" value = {{b.value}}> {{b.label}} </option>
                      
+                    </select>
                         
-                    </div>
-
-                    <br>
-                    <br>
-
-
-
-                    <div class = "w3-container">
-                        
-                       <label class = "w3-text-gray"><strong>JMBG vlasnika</strong> </label>
+                      </p>
+                      <!--
+                      <div  class = "w3-panel" *ngIf="kilometrazaKasko.touched && !kilometrazaKasko.valid">
+                       <div *ngIf="kilometrazaKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti kilometrazu slepovanja  </label></div>
+                       
+                        </div>  -->
+                                                
                       <br>
-                      
-                       <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.jmbg">      
-                     
-                        
-                    </div>
 
-                    <br>
-                    <br>
-                  
-
-
-                  
-                            <div class = "w3-container ">
-                  
-                              <label class = "w3-text-gray"><strong>Trajanje osiguranja</strong> </label>
-                              <br>
-                              <input class = "w3-input w3-border w3-center " type = "number" min="1" style = "width:100%" [(ngModel)]="valueObjekatPut.trajanjeOsiguranja">
+                      <p>
+                          
+                           <label class = "w3-text-gray" for="cenaPopravkeKasko"> <strong> Cena popravke ($) </strong>  </label>
+                          <!--  <input  required  ngModel class="w3-input w3-border" id = "cenaPopravkeKasko" name="cenaPopravkeKasko" #cenaPopravkeKasko="ngModel"  type="number" >  -->
+                          <select   class="w3-select w3-border" id = "cenaPopravkeKasko" name="cenaPopravkeKasko" #selectCena (change)="setNewPop(selectCena.value)" > 
+                              <option *ngFor = "let c of repairs" value = {{c.value}}> {{c.label}} </option>
+                         
+                        </select>
+                            </p>
+                           <!-- <div  class = "w3-panel" *ngIf="cenaPopravkeKasko.touched && !cenaPopravkeKasko.valid">
+                             <div *ngIf="cenaPopravkeKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti cenu popravke  </label></div>
                              
-                  
-                            </div>
-                  
+                              </div>  -->
+                                                      
                             <br>
-                            <br>
-                  
-                  
-                            <div class = "w3-container">
+
+                            <p>
                                 
-                                <label class = "w3-text-gray"><strong>Paket </strong> </label>
-                                <br>
-                                            
-                                <select class="w3-select w3-border" name="optionPackage" style = "width:100%" [(ngModel)]="valueObjekatPut.paketVrsta"> <!-- ovde ide baza podataka -->
-                                  <option value="prvi" selected>prvi</option>
-                                  <option value="drugi">drugi</option>
-                                  <option value="treci">treci</option>
+                                 <label class = "w3-text-gray" for="hotelKasko"> <strong> Broj dana u hotelu </strong>  </label>
+                                  <!--<input  required  ngModel class="w3-input w3-border" id = "hotelKasko" name="hotelKasko" #hotelKasko="ngModel"  type="number" >  -->
+                                  <select   class="w3-select w3-border" id = "hotelKasko" name="hotelKasko" #selectHotel (change)="setNewHote(selectHotel.value)" > 
+                                      <option *ngFor = "let d of hotels" value = {{d.value}}> {{d.label}} </option>
+                                 
+                                </select>
+
+                                    
+                                  </p>
+                                 <!-- <div  class = "w3-panel" *ngIf="hotelKasko.touched && !hotelKasko.valid">
+                                   <div *ngIf="hotelKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti broj dana u hotelu  </label></div>
+                                   
+                                    </div>  -->
+                                                            
+                                  <br>
+
+                                  <p>
+                                      <label class = "w3-text-gray" for="prevozKasko"> <strong> Alternativni prevoz </strong>  </label>
+                                     <br>
+                                     <select   class="w3-select w3-border" id = "prevozKasko" name="prevozKasko" #selectPrevoz (change)="setNewAlt(selectPrevoz.value)" > 
+                                        <option *ngFor = "let e of alts" value = {{e.value}}> {{e.label}} </option>
+                                   
                                   </select>
+                                 
                                 
-                            </div>
-                  
-                            <br>
-                            <br>
-                  
-                            <div class = "w3-container">
-                                
-                               <label class = "w3-text-gray"><strong>Kilometraza slepovanja</strong> </label>
-                               <br>
-                                  <input class = "w3-input w3-border" type = "number" min="1" style = "width:100%" [(ngModel)]= "valueObjekatPut.kiloSlepovanja">         
+                                 </p>
+                     
+                             <!--<div class = "w3-panel" *ngIf="prevozKasko.touched && !prevozKasko.valid">
+                               <div *ngIf="prevozKasko.errors.required" style="width:70%;">  <label class = "w3-text-red "> Morate uneti alternativni prevoz </label></div>
+     
+     
+                             </div> -->
+     
+     
+                 
+                     <br>
+
+                     <p>
+                        
+                         <label class = "w3-text-gray" for="markaTipKasko"> <strong> Marka i tip vozila </strong>  </label>
+                          <input  required  ngModel class="w3-input w3-border" id = "markaTipKasko" name="markaTipKasko" #markaTipKasko="ngModel"  type="text" > 
+                            
+                          </p>
+                          <div  class = "w3-panel" *ngIf="markaTipKasko.touched && !markaTipKasko.valid">
+                           <div *ngIf="markaTipKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti marku i tip vozila  </label></div>
+                           
+                            </div> 
+                                                    
+                          <br>
+
+
+                          <p>
                               
-                                
-                            </div>
-                  
-                              <br>
-                              <br>
-                  
-                              <div class = "w3-container">
+                               <label class = "w3-text-gray" for="godinaKasko"> <strong> Godina proizvodnje </strong>  </label>
+                                <input  required  min="1960" ngModel class="w3-input w3-border" id = "godinaKasko" name="godinaKasko" #godinaKasko="ngModel"  type="number" > 
                                   
-                                 <label class = "w3-text-gray"><strong>Cena popravke ($)  </strong> </label>
+                                </p>
+                                <div  class = "w3-panel" *ngIf="godinaKasko.touched && !godinaKasko.valid">
+                                 <div *ngIf="godinaKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti godinu proizvodnje  </label></div>
+                                 <div *ngIf="godinaKasko.errors.min" style="width:70%;">  <label class = "w3-text-red"> Vozilo mora biti mladje  </label></div>
+                                 
+                                  </div> 
+                                                          
                                 <br>
-                                
-                                 <input class = "w3-input w3-border w3-bar-item" type = "number" min = "100"  style = "width:100%" [(ngModel)]="valueObjekatPut.cenaPopravke">      
-                               
-                                  
-                              </div>
-                  
-                              <br>
-                              <br>
-                              <div class = "w3-container">
-                                  
-                                <label class = "w3-text-gray"><strong>Broj dana u hotelu</strong> </label>
-                                <br>
-                                              
-                                <select class="w3-select w3-border" name="optionHotelDay" style = "width:100%" [(ngModel)]="valueObjekatPut.brojDanaHotel"> <!-- ovde ide baza podataka -->
-                                  <option value="jedan" selected>1</option>
-                                  <option value="dva">2</option>
-                                  <option value="tri">3</option>
-                                  </select>
-                                  
-                              </div>
+
+
+                                <p>
+                                    
+                                     <label class = "w3-text-gray" for="tablicaKasko"> <strong> Broj registarske tablice  </strong>  </label>
+                                      <input  required  ngModel class="w3-input w3-border" id = "tablicaKasko" name="tablicaKasko" #tablicaKasko="ngModel"  type="text" > 
+                                        
+                                      </p>
+                                      <div  class = "w3-panel" *ngIf="tablicaKasko.touched && !tablicaKasko.valid">
+                                       <div *ngIf="tablicaKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti broj registarske tablice </label></div>
+                                       
+                                        </div> 
+                                                                
+                                      <br>
+
+                                      
+                                <p>
+                                    
+                                     <label class = "w3-text-gray" for="sasijaKasko"> <strong> Broj sasije  </strong>  </label>
+                                      <input  required  ngModel class="w3-input w3-border" id = "sasijaKasko" name="sasijaKasko" #sasijaKasko="ngModel"  type="number" > 
+                                      
+                                      </p>
+                                      <div  class = "w3-panel" *ngIf="sasijaKasko.touched && !sasijaKasko.valid">
+                                       <div *ngIf="sasijaKasko.errors.required" style="width:70%;">  <label class = "w3-text-red"> Morate uneti broj sasije </label></div>
+                                       
+                                        </div> 
+                                                                
+                                      <br>
 
 
 
-                              <br>
-                              <br>
-                              <div class = "w3-container">
-                                  
-                                <label class = "w3-text-gray"><strong>Alternativni prevoz</strong> </label>
-                                <br>
-                                              
-                                <select class="w3-select w3-border" name="optionRide" style = "width:100%" [(ngModel)]="valueObjekatPut.altPrevoz"> <!-- ovde ide baza podataka -->
-                                  <option value="jedna" selected>1</option>
-                                  <option value="druga">2</option>
-                                  <option value="treca">3</option>
-                                  </select>
-                                  
-                              </div>
-                  
-                              <br>
-                              <br>
-                              <hr>
-                              
-                              <div class = "w3-container">
-                                  
-                                 <label class = "w3-text-gray"><strong> Marka i tip vozila</strong> </label>
-                                <br>
-                                
-                                 <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.markaTipVozila">      
-                               
-                                  
-                              </div>
-    
-                              <br>
-                              <br>
-    
-    
-                              <div class = "w3-container">
-                                  
-                                 <label class = "w3-text-gray"><strong> Godina proizvodnje</strong> </label>
-                                <br>
-                                
-                                 <input class = "w3-input w3-border w3-bar-item" type = "number" min = "1960" max = "2017"  style = "width:100%" [(ngModel)]="valueObjekatPut.godinaProizvodnje">      
-                               
-                                  
-                              </div>
-                              <br>
-                              <br>
-                              <div class = "w3-container">
-                                  
-                                 <label class = "w3-text-gray"><strong>Broj registarske tablice</strong> </label>
-                                <br>
-                                
-                                 <input class = "w3-input w3-border w3-bar-item" type = "text"  style = "width:100%" [(ngModel)]="valueObjekatPut.tablicaBroj">      
-                               
-                                  
-                              </div>
 
-                              <br>
-                              <br>
-                              <div class = "w3-container">
-                                  
-                                 <label class = "w3-text-gray"><strong>Broj sasije</strong> </label>
-                                <br>
-                                
-                                 <input class = "w3-input w3-border w3-bar-item" type = "number"  style = "width:100%" [(ngModel)]="valueObjekatPut.brojSasije">      
-                               
-                                  
-                              </div>
+                    </form>
+
+
     
     
     
@@ -223,10 +261,10 @@
                       </div>
     
                       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Izadji</button>
-                          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red w3-right">Sacuvaj</button>
+                          <button [disabled]="!myForm4.form.valid"  (click)="save(imePrezimeKasko, jmbgKasko, trajanjeKasko, markaTipKasko, godinaKasko, tablicaKasko, sasijaKasko)" type="button" class="w3-button w3-red">Sacuvaj</button>
+                          <button   (click)="close()" type="button" class="w3-button w3-red w3-right">Izadji</button>
                           
                         </div>       
     
     
-    </div>
+    </div>  

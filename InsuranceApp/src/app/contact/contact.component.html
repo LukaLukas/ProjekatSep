@@ -179,44 +179,62 @@
     </div>
 
     <div class = {{vidi}}>
-    
 
-            <div style = "width:50%" >
+            <form class="w3-container" #myForm7="ngForm">
                     
-                <label class = "w3-text-gray"> <strong>Ime i prezime*</strong> </label>
-                       <br>
-                        <input type = "text" class = "w3-input w3-border" [(ngModel)]="kontaktObjekat.naziv">
+                 <br>
+
+                 <p>
+                        <label class = "w3-text-gray" for="imePrezimeKontakt"> <strong> Ime i prezime* </strong>  </label>
+                        <br>
+                        <input required  ngModel class="w3-input w3-border" id = "imePrezimeKontakt" name="imePrezimeKontakt" #imePrezimeKontakt="ngModel"  type="text" >
+                        
+                    </p>
                     
-            </div>
-            <br>
-            <br>
-            <div style = "width:50%" >
-                                  
-            <label class = "w3-text-gray"> <strong>Email*</strong> </label>
-                 <br>
-                 <input type = "email" class = "w3-input w3-border" [(ngModel)]= "kontaktObjekat.email">
-                                  
-            </div>
-
+                    <div class = "w3-panel" *ngIf="imePrezimeKontakt.touched && !imePrezimeKontakt.valid">
+                        <div *ngIf="imePrezimeKontakt.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti ime i prezime</label></div>
     
-            <br>
-            <br>
-            <div style = "width:50%">
-                                  
-            <label class = "w3-text-gray"> <strong>Opis</strong> </label>
-                 <br>
-                 
-                <textarea rows="10" cols="50" class = "w3-input w3-border" [(ngModel)]= "kontaktObjekat.opis">
-       
-                </textarea>
-                                  
-            </div>
+                    </div>
+                
+                    <br>
 
-            <br>
-            <br>
-            <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white" (click) = "FunctionPromena2()">Ugasi</button>
-            <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white" (click) = "posaljiObjekat()"  >Posalji</button>
+
+                    <p>
+                            <label class = "w3-text-gray" for="emailKontakt"> <strong> Email* </strong>  </label>
+                            <br>
+                            <input required  ngModel class="w3-input w3-border" id = "emailKontakt" name="emailKontakt" #emailKontakt="ngModel"  type="email" >
+                            
+                        </p>
+                        
+                        <div class = "w3-panel" *ngIf="emailKontakt.touched && !emailKontakt.valid">
+                            <div *ngIf="emailKontakt.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti email</label></div>
         
+                        </div>
+                    
+                        <br>
+
+                        <div style = "width:50%">
+                                
+                    <label class = "w3-text-gray"> <strong>Opis</strong> </label>
+                    <br>
+               
+                    <textarea rows="10" cols="50" class = "w3-input w3-border" [(ngModel)]= "kontaktObjekat.opis">
+     
+                    </textarea>
+                                
+                    </div>
+
+          <br>
+          <br>
+          <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white" (click) = "FunctionPromena2()">Ugasi</button>
+          <button class = "w3-btn w3-red w3-text-white w3-hover-text-red w3-hover-white"    [disabled]="!myForm7.form.valid"   (click) = "posaljiObjekat(imePrezimeKontakt, emailKontakt)" >Posalji</button>
+      
+
+
+            </form>
+    
+
+          
 
     </div>
 

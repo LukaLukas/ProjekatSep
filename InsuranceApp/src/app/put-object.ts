@@ -13,7 +13,8 @@ export class PutObject {
             public markaTipVozila:string = "",
             public godinaProizvodnje:string = "",
             public tablicaBroj:string = "",
-            public brojSasije:string = ""
+            public brojSasije:string = "",
+            public pokazivac:boolean = false
 
 
 

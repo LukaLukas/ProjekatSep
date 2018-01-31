@@ -20,12 +20,15 @@ export class DataUsersComponent implements OnInit {
   brojDece:number = 0;
   brojRoditelja:number = 0;
   brojevi:Array<number>= [];
+  vre:boolean = true;
   
   constructor(private route: Router, private activatedRoute: ActivatedRoute, private serv: ServisObjectService) { }
 
   
   
   ngOnInit() {
+
+    //this.vre = true;
 
     this.modelNosilac = this.serv.getNosilac();     
     this.modelNizNosioci = this.serv.getNizNosioci();
@@ -51,8 +54,15 @@ export class DataUsersComponent implements OnInit {
   }
 
 
-  redirectValueContinueWithObject() {
-    
+  redirectValueContinueWithObject(value1, value2, value3, value4, value5, value6, value7) {
+          this.modelNosilac.imeNosilac = value1.value;
+          this.modelNosilac.prezimeNosilac = value2.value;
+          this.modelNosilac.emailNosilac = value3.value;
+          this.modelNosilac.jmbgNosilac = value4.value;
+          this.modelNosilac.pasosNosilac = value5.value;
+          this.modelNosilac.adresaNosilac = value6.value;
+          this.modelNosilac.telefonNosilac = value7.value;
+
           this.serv.setValueNosilac(this.modelNosilac);
     
           this.route.navigate(['/Paying']); // za sada
@@ -83,12 +93,53 @@ export class DataUsersComponent implements OnInit {
 
   redirectValueContinueWithObject2() {
     
+
          // this.serv.setValueNosilac(this.modelNosilac);
+         
+
+      //  console.log(this.modelNizNosioci.imeNosilaca);
+
+        let broj = this.modelNizNosioci.imeNosilaca.length;
+
+
+      /*  for (var i = 0; i < broj; i++) {
+
+            if (this.modelNizNosioci.imeNosilaca[i] == '' || this.modelNizNosioci.imeNosilaca[i] == null 
+          || this.modelNizNosioci.prezimeNosilac[i] == '' || this.modelNizNosioci.prezimeNosilac[i] == null
+          || this.modelNizNosioci.jmbgNosilac[i] == '' || this.modelNizNosioci.jmbgNosilac[i] == null 
+          || this.modelNizNosioci.pasosNosilac[i] == '' || this.modelNizNosioci.pasosNosilac[i]== null
+          || this.modelNizNosioci.adresaNosilac[i] == '' || this.modelNizNosioci.adresaNosilac[i] == null
+          || this.modelNizNosioci.telefonNosilac[i] == '' || this.modelNizNosioci.telefonNosilac[i] == null) {
+
+                this.vre = false;
+                break;
+                
+
+            }
+
+        }*/
+
+       // if (this.modelNizNosioci == null) {
+          //this.vre = false;
+        //}
+
+       // console.log(this.vre);
+
+
+             /* if (this.vre == false) {
+
+                alert("Niste popunili sva polja");
+                this.route.navigate(['/DataUsers'])
+
+              } else {*/
+
           this.serv.setValueNizNosioci(this.modelNizNosioci);
     
           this.route.navigate(['/Policy']); 
+              //}
     
       }
+
 
   redirectValueBackWithObject2() {
 
@@ -98,6 +149,9 @@ export class DataUsersComponent implements OnInit {
     
     this.route.navigate(['/CostInsuranceTrip']);
   }
+
+  
+
 
 
   redirectValueCloseWithObject2() {

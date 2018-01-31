@@ -10,7 +10,8 @@ export class StambenoObject {
             public adresaVlasnika:string = "",
 
             public imePrezimeVlasnika:string = "",
-            public jmbgVlasnika:string = ""
+            public jmbgVlasnika:string = "",
+            public pokazivac:boolean = false
 
 
 

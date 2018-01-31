@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
+//import {AppRoutingModule} from './app-routing.module';
+//import { AppRoutingModule } from './app-routing/app-routing.module';
 import {ServisObjectService} from './servis-object.service';
 import {HttpServiceService} from './http-service.service';
 //import { CarouselModule } from 'angular4-carousel';
@@ -26,6 +28,7 @@ import { BuyCascoInsuranceComponent } from './buy-casco-insurance/buy-casco-insu
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataUsersComponent } from './data-users/data-users.component';
 import { PayingComponent } from './paying/paying.component';
+import { ResponseObjectComponent } from './response-object/response-object.component';
 
 
   const appRoutes: Routes = [
@@ -72,7 +75,8 @@ import { PayingComponent } from './paying/paying.component';
     BuyStambenoInsuranceComponent,
     BuyCascoInsuranceComponent,
     DataUsersComponent,
-    PayingComponent
+    PayingComponent,
+    ResponseObjectComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +84,7 @@ import { PayingComponent } from './paying/paying.component';
     HttpModule,
     RouterModule.forRoot(appRoutes),
     CarouselModule.forRoot()
+    //AppRoutingModule
     //CarouselModule
 
   ],

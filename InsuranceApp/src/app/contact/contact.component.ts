@@ -30,7 +30,11 @@ kontaktObjekat:any;
     this.vidi = "w3-hide";
   }
 
-posaljiObjekat () {
+posaljiObjekat (obj1, obj2) {
+
+
+    this.kontaktObjekat.naziv = obj1.value;
+    this.kontaktObjekat.email = obj2.value;
 
   this.serv2.setValueContact(this.kontaktObjekat);
     

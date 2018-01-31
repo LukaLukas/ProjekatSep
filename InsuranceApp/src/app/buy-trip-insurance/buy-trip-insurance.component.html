@@ -164,142 +164,243 @@
 
 
         <div class = "w3-quarter">
-          <p>  </p>
+           
+                   <!-- <div *ngFor= "let a of sadrzaj">
+                        <div *ngIf = "a.id == 1"> 
+                            <div *ngFor = "let b of a.vrednosti">  <strong> {{b.sifra}} </strong>
+                         </div> 
+                       
+                        </div>
+
+                    </div> 
+
+                    <div *ngFor = "let a of regs">
+                            <strong> {{a.label}} </strong>
+
+                    </div> -->
+
+                
+            <p>
+                </p>
+         
 
         </div>
 
 
         <div class = "w3-half">
 
-          <div class = "w3-container">
-
-            <label class = "w3-text-gray"><strong>Destinacija</strong> </label>
-            <br>
-            
-            <select class="w3-select w3-border" name="optionDestination" style = "width:70%;" [(ngModel)]= "modelVrednost.destinacija"> <!-- ovde ide baza podataka -->
-                <option value="1" selected>Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-
-          </div>
-
-          <br>
-          <br>
-
-
-          <div class = "w3-container">
-                
-                            <label class = "w3-text-gray"><strong>Vrsta osiguravajuceg paketa</strong> </label>
-                            <br>
-                            
-                            <select class="w3-select w3-border" name="optionPackage" (change)="changePorodicno()" style = "width:70%;" [(ngModel)]= "modelVrednost.vrstaPaketa"> <!-- ovde ide baza podataka -->
-                                
-                                <option value="1" selected>Individualno</option>
-                                <option value="2">Porodicno</option>
-                            </select>
-                
-            </div>
-                
-            <br>
-            <br>
-
-
-          <div *ngIf="porodicno" class = "w3-container">
-              
-              <label class = "w3-text-gray"><strong>Broj roditelja</strong> </label>
-              <br>
-                          
-             <input class = "w3-input w3-border" type = "number" min="1" style = "width:40%" [(ngModel)]="modelVrednost.brojRoditelja"> 
-              
-          </div>
-
-          <br>
-          <br>
-
-
-          <div *ngIf="porodicno" class = "w3-container">
-                
-                <label class = "w3-text-gray"><strong>Broj dece</strong> </label>
-                <br>
-                            
-               <input class = "w3-input w3-border" type = "number" min="1" style = "width:40%" [(ngModel)]="modelVrednost.brojDece"> 
-                
-            </div>
-  
-            <br>
-            <br>
-
-            <div *ngIf="!porodicno" class = "w3-container">
                     
-                    <label class = "w3-text-gray"><strong>Uzrast lica koja putuje</strong> </label>
-                    <br>
-                                
-                    <select class="w3-select w3-border" name="optionYouth" style = "width:40%;" [(ngModel)]="modelVrednost.uzrastLica"> <!-- ovde ide baza podataka -->
-                        
-                        <option value="Deca">Deca (6 meseci-18 godina)</option>
-                        <option value="Odrasli" selected>Odrasli (18-70 godina)</option>
-                        <option value="Stariji">Stariji (preko 70 godina)</option>
-                    </select>
-                    
-                </div>
-      
-                <br>
-                <br>
-  
-
-          <div class = "w3-container">
-              
-             <label class = "w3-text-gray"><strong>Pocetak osiguranja</strong> </label>
-             <br>
-                <input class = "w3-input w3-border" type = "date" style = "width:40%" [(ngModel)]="modelVrednost.pocetakOsiguranja">         
-            
-              
-          </div>
-
-            <br>
-            <br>
-
-            <div class = "w3-container w3-bar">
-                
-               <label class = "w3-text-gray"><strong> Trajanje osiguranja</strong> </label>
-              <br>
-              
-               <input class = "w3-input w3-border w3-bar-item" type = "number" min="1" style = "width:40%" [(ngModel)]= "modelVrednost.trajanjeOsiguranja"><label class = "w3-bar-item"> dana </label>       
+      <!--  <div class="w3-card-4"> -->
              
-                
-            </div>
+            <form class="w3-container" #myForm="ngForm">
 
-           
+                <br>
 
-            <br>
-            <br>
-            <div class = "w3-container">
-                
-              <label class = "w3-text-gray"><strong>Do kog iznosa je osoba osigurana</strong> </label>
-              <br>
-                            
-              <select class="w3-select w3-border" name="optionYouth" style = "width:40%" [(ngModel)]="modelVrednost.iznos"> <!-- ovde ide baza podataka -->
-                <option value="10000$" selected>10000$</option>
-                <option value="20000$">20000$</option>
-                <option value="30000$">30000$</option>
-                <option value="preko$">preko...</option>
-                </select>
-                
-            </div>
+                <p>
+                    <label class = "w3-text-gray" for="optionDestination"> <strong> Destinacija  </strong>  </label>
+                    <br>
+                    <select   class="w3-select w3-border" id = "optionDestination" name="optionDestination" #selectElem (change)="setNewValue(selectElem.value)"  style = "width:70%;"> <!-- ovde ide baza podataka -->
+                     
 
-            <br>
-            <br>
-          
-        
-            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueWithObject()">IZRACUNAJ </button>
-            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani </button>
+                        <option *ngFor = "let a of regs" value = {{a.value}}> {{a.label}} </option>
+                        
+                  
+
+                    </select>
+                </p>
+                
+                <!-- <div class = "w3-panel" *ngIf="optionDestination.touched && !optionDestination.valid">
+                    <div *ngIf="optionDestination.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti destinaciju </label></div>
+
+                </div> -->
             
-          
+                <br>
 
 
 
-        </div>
+
+                <p>
+                        <label class = "w3-text-gray" for="optionPackage"> <strong> Vrsta osiguravajuceg paketa </strong>  </label>
+                        <br>
+                        <select  required ngModel class="w3-select w3-border" id = "optionPackage" name="optionPackage"  #optionPackage = "ngModel"  (change)="changePorodicno(optionPackage)" style = "width:70%;"> <!-- ovde ide baza podataka -->
+                           
+                            <option value="Individualno" >Individualno</option>
+                            <option value="Porodicno">Porodicno</option> 
+
+                        </select>
+                    </p>
+                    
+                    <div class = "w3-panel" *ngIf="optionPackage.touched && !optionPackage.valid">
+                        <div *ngIf="optionPackage.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti vrstu paketa </label></div>
+    
+                    </div> 
+
+                <br>
+
+
+                <div *ngIf="porodicno">
+                    <p >
+                        <label class = "w3-text-gray" for="brojRoditelja"> <strong> Broj roditelja </strong>  </label>
+                       <!-- <input  min="1" ngModel class="w3-input w3-border" id = "brojRoditelja" name="brojRoditelja" #brojRoditelja="ngModel"  type="number" style = "width:40%;"> -->
+                        <input class = "w3-input w3-border" required type = "number" min=1 style = "width:40%" [(ngModel)]="modelVrednost.brojRoditelja" [ngModelOptions]="{standalone: true}"> 
+                        
+                    </p>
+                </div>
+                    
+                   
+
+                <br>
+
+                    <div *ngIf="porodicno">
+                <p  >
+                        <label class = "w3-text-gray" for="brojDece"> <strong> Broj dece </strong>  </label>
+                      <!--  <input   min="1" ngModel class="w3-input w3-border" id = "brojDece" name="brojDece" #brojDece="ngModel"  type="number" style = "width:40%;"> -->
+                        <input class = "w3-input w3-border" required type = "number" min=1 style = "width:40%" [(ngModel)]="modelVrednost.brojDece" [ngModelOptions]="{standalone: true}"> 
+                        
+                        
+                    </p>
+                    </div>
+    <!--
+                    <div  class = "w3-panel" *ngIf=" porodicno && brojDece.touched && !brojDece.valid">
+                        <div *ngIf="brojDece.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti broj dece </label></div>
+    
+                    </div> -->
+
+                <br>
+
+
+                    <div *ngIf="!porodicno">
+                <p>
+                        <label class = "w3-text-gray" for="optionYouth"> <strong> Uzrast lica </strong>  </label>
+                        <br>
+                     <!--   <select  ngModel class="w3-select w3-border" id = "uzrastLica" name="uzrastLica"  #uzrastLica = "ngModel"  style = "width:40%;"> --> <!-- ovde ide baza podataka -->      
+                        <select class="w3-select w3-border" name="optionYouth" #selectYouth (change)="setNewYouth(selectYouth.value)"  style = "width:40%;" > <!-- ovde ide baza podataka -->
+                            
+                            <option *ngFor = "let i of starts" value = {{i.value}}> {{i.label}} </option> 
+                        <!--<option value="Deca">Deca (6 meseci-18 godina)</option>
+                        <option value="Odrasli">Odrasli (18-70 godina)</option>
+                        <option value="Stariji">Stariji (preko 70 godina)</option> -->
+                        </select>
+                    </p>
+                    </div>
+    
+                    
+
+                <br>
+
+
+                <p >
+                        <label class = "w3-text-gray" for="pocetakOsiguranja"> <strong> Pocetak osiguranja </strong>  </label>
+                        <input required  ngModel class="w3-input w3-border" id = "pocetakOsiguranja" name="pocetakOsiguranja" #pocetakOsiguranja="ngModel"  type="date" style = "width:40%;">
+                        
+                    </p>
+    
+                        
+                    <div  class = "w3-panel" *ngIf="pocetakOsiguranja.touched && !pocetakOsiguranja.valid">
+                        <div *ngIf="pocetakOsiguranja.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti pocetak osiguranja </label></div>
+    
+                    </div> 
+
+                <br>
+
+
+                <p >
+                        <label class = "w3-text-gray" for="trajanjeOsiguranja"> <strong> Trajanje osiguranja (u danima) </strong>  </label>
+                        <input required min="1"  ngModel class="w3-input w3-border" id = "trajanjeOsiguranja" name="trajenjeOsiguranja" #trajanjeOsiguranja="ngModel"  type="number" style = "width:40%;">
+                        
+                    </p>
+                    
+                    <div  class = "w3-panel" *ngIf="trajanjeOsiguranja.touched && !trajanjeOsiguranja.valid">
+                        <div *ngIf="trajanjeOsiguranja.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti trajanje osiguranja </label></div>
+    
+                    </div> 
+
+                <br>
+
+                
+
+                <p>
+                        <label class = "w3-text-gray" for="iznos"> <strong> Do kog iznosa je  (svaka) osoba osigurana </strong>  </label>
+                        <br> 
+                        <select   class="w3-select w3-border" #selectIznos (change)="setNewIznos(selectIznos.value)"  id = "iznos" name="iznos"   style = "width:70%;"> <!-- ovde ide baza podataka -->
+                            <option *ngFor = "let k of iznoss" value = {{k.value}}> {{k.label}} </option> 
+                           <!-- <option value="10000$">10000$</option>
+                            <option value="20000$">20000$</option>
+                            <option value="30000$">30000$</option>
+                            <option value="preko$">preko...</option> -->
+
+                        </select>
+                    </p>
+    
+                        
+                <!--    <div class = "w3-panel" *ngIf="iznos.touched && !iznos.valid">
+                        <div *ngIf="iznos.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti do kog iznosa su osobe osigurane </label></div>
+    
+                    </div>  -->
+    
+                    <br>
+
+                    <p>
+
+                        
+            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white" [disabled]="!myForm.form.valid" (click)= "redirectValueWithObject(optionPackage, pocetakOsiguranja, trajanjeOsiguranja)">IZRACUNAJ </button>
+            <button  class = "w3-btn w3-red w3-hover-white w3-hover-text-red w3-text-white"  (click)= "redirectValueCloseWithObject()">Odustani </button>
+
+                    </p>
+
+
+ <!-- ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg  -->
+
+<!--
+                <p>      
+                <label class="w3-text-gray" for ="first" ><strong>First Name</strong></label>
+                <input required minlength="3" maxlength="10" ngModel class="w3-input w3-border" id = "first" name="first" #first="ngModel" (change)="log(first)" type="text" style = "width:70%;">
+                    
+                 </p>
+
+                 <div class = "w3-panel" *ngIf="first.touched && !first.valid">
+                        <div *ngIf="first.errors.required"  style = "width:70%;"><label class = "w3-text-red w3-large">Morate uneti ime </label> </div>
+                        <div *ngIf="first.errors.minlength" style = "width:70%;"> <label class = "w3-text-red w3-large"> malo je slova </label> </div>
+    
+                </div>
+            
+                
+
+                <p> 
+                
+                <br>
+                    
+                 <label class="w3-text-gray" for = "last"><strong>Last Name</strong></label>
+                <input required ngModel class="w3-input w3-border" id = "last" name="last" #last="ngModel" (change)="log2(last)" type="text" style = "width:70%;">
+        
+                </p>
+
+                <div class = "w3-panel" *ngIf="last.touched && !last.valid">
+                        <div *ngIf="last.errors.required"  style = "width:70%;"><label class = "w3-text-red w3-large">Morate uneti prezime </label> </div>
+                       
+                </div>
+
+                <p>
+                        <select  required ngModel class="w3-select w3-border" id = "optionDestination" name="optionDestination"  #optionDestination = "ngModel" (change)="log3(optionDestination)"  style = "width:70%;">  --><!-- ovde ide baza podataka -->
+            <!--                <option value="1" selected>Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                
+                </p>
+            
+
+                <br>
+                <p>
+                
+                
+                <button class="w3-btn w3-red" [disabled]="!myForm.form.valid" (click)="nestoDaProbam(first, last, optionDestination)" >Register</button></p>
+                -->   </form>
+      <!-- </div> -->
+
+
+
+        </div> 
 
 
 

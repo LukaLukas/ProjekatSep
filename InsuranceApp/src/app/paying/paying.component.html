@@ -13,7 +13,7 @@
                 <div class = "w3-bar">
                 
                             <a href = "#" class = "w3-bar-item w3-text-orange"> fizicka lica </a>
-                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas </a>
+                            <a href = "#" class = "w3-bar-item w3-text-orange"> kontaktirajte nas  {{modelResponse.code}}, {{modelResponse.opis}} </a>
                             
                 
                 </div>
@@ -136,62 +136,51 @@
 
       </div>
 
+      
 
 
+
       <br>
       <br>
+        <div class = "w3-row">
+            <div class = "w3-third">
+                    <p>
+                    </p>
+            </div>
+
+            <div class = "w3-third">
+
+                    
+
+                    <div class = "w3-container  w3-modal" id = "id3" >
+                            
+                                    
+                                <app-response-object  [modelResponse]="modelResponse" >   </app-response-object>
+
+                          
+<!--
+                            <div *ngIf = "modelResponse.code == 400" class = "w3-card">
+                                    <label class = "w3-text-red w3-xlarge">
+                                        Neuspesno ste izvrsili placanje preko {{modelResponse.nacin}}-a
+                                        </label>
+
+                            </div> -->
+
+
+                    </div>
+
+            </div>
+
+
+            <div class = "w3-third">
+                    <p>
+                    </p>
+            </div>
+
+        </div>
+
       <br>
   
-   <!--   <div class = "w3-row">
-  
-  
-          <div class = "w3-quarter">
-            <p> </p>
-          </div>
-  
-          <div class = "w3-half w3-display-container">
-  
-            <div class = "w3-display-left">
-  
-              <div class = "w3-bar">
-  
-                  <i class="fa fa-cc-mastercard w3-bar-item " style="font-size:60px;"></i>
-                  <i class="fa fa-cc-visa w3-bar-item" style="font-size:60px;"></i>
-                  <i class="fa fa-cc-diners-club w3-bar-item" style="font-size:60px;"></i>
-  
-              </div>
-          
-                
-            </div>
-  
-            <div class = "w3-display-middle">
-                <div class = "w3-bar">
-                    <i class="fa fa-cc-paypal w3-bar-item" style="font-size:60px;"></i>
-                    <i class="fa fa-credit-card w3-bar-item" style="font-size:60px;"></i>
-                    
-                </div>
-            </div>
-  
-            <div class = "w3-display-right">
-                <div class = "w3-bar">
-                    <i class="fa fa-paypal w3-bar-item" style="font-size:60px;"></i>
-                    
-                    
-                </div>
-            </div>
-  
-          </div>
-  
-  
-          <div class = "w3-quarter">
-  
-  
-          </div>
-  
-  
-  
-  
-      </div> -->
   
 
       <br>
