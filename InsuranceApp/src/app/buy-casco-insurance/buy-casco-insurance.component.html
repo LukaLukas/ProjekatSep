@@ -96,7 +96,7 @@
                                  <label class = "w3-text-gray" for="paketKasko"> <strong> Paket </strong>  </label>
                                 <br>
                               <select   class="w3-select w3-border" id = "paketKasko" name="paketKasko" #selectPak (change)="setNewPak(selectPak.value)" > 
-                                  <option *ngFor = "let a of pakets" value = {{a.value}}> {{a.label}} </option>
+                                  <option *ngFor = "let a of pakets" value = {{a.label}}> {{a.label}} </option>
                                 <!--<option value="prvi">Option 1</option>
                               <option value="drugi">Option 2</option>
                             <option value="treci">Option 3</option> -->
@@ -118,7 +118,7 @@
                      <label class = "w3-text-gray" for="kilometrazaKasko"> <strong>Kilometraza slepovanja </strong>  </label>
                       <!--<input  required  ngModel class="w3-input w3-border" id = "kilometrazaKasko" name="kilometrazaKasko" #kilometrazaKasko="ngModel"  type="number" >  -->
                       <select   class="w3-select w3-border" id = "kilometrazaKasko" name="kilometrazaKasko" #selectKilo (change)="setNewSlep(selectKilo.value)" > 
-                          <option *ngFor = "let b of sleps" value = {{b.value}}> {{b.label}} </option>
+                          <option *ngFor = "let b of sleps" value = {{b.label}}> {{b.label}} </option>
                      
                     </select>
                         
@@ -136,7 +136,7 @@
                            <label class = "w3-text-gray" for="cenaPopravkeKasko"> <strong> Cena popravke ($) </strong>  </label>
                           <!--  <input  required  ngModel class="w3-input w3-border" id = "cenaPopravkeKasko" name="cenaPopravkeKasko" #cenaPopravkeKasko="ngModel"  type="number" >  -->
                           <select   class="w3-select w3-border" id = "cenaPopravkeKasko" name="cenaPopravkeKasko" #selectCena (change)="setNewPop(selectCena.value)" > 
-                              <option *ngFor = "let c of repairs" value = {{c.value}}> {{c.label}} </option>
+                              <option *ngFor = "let c of repairs" value = {{c.label}}> {{c.label}} </option>
                          
                         </select>
                             </p>
@@ -152,7 +152,7 @@
                                  <label class = "w3-text-gray" for="hotelKasko"> <strong> Broj dana u hotelu </strong>  </label>
                                   <!--<input  required  ngModel class="w3-input w3-border" id = "hotelKasko" name="hotelKasko" #hotelKasko="ngModel"  type="number" >  -->
                                   <select   class="w3-select w3-border" id = "hotelKasko" name="hotelKasko" #selectHotel (change)="setNewHote(selectHotel.value)" > 
-                                      <option *ngFor = "let d of hotels" value = {{d.value}}> {{d.label}} </option>
+                                      <option *ngFor = "let d of hotels" value = {{d.label}}> {{d.label}} </option>
                                  
                                 </select>
 
@@ -169,7 +169,7 @@
                                       <label class = "w3-text-gray" for="prevozKasko"> <strong> Alternativni prevoz </strong>  </label>
                                      <br>
                                      <select   class="w3-select w3-border" id = "prevozKasko" name="prevozKasko" #selectPrevoz (change)="setNewAlt(selectPrevoz.value)" > 
-                                        <option *ngFor = "let e of alts" value = {{e.value}}> {{e.label}} </option>
+                                        <option *ngFor = "let e of alts" value = {{e.label}}> {{e.label}} </option>
                                    
                                   </select>
                                  

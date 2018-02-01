@@ -136,10 +136,10 @@ export class BuyStambenoInsuranceComponent implements OnInit {
     this.procenjene = proce;
     this.osiguravanje = osi;
 
-    this.selectedOsigu = this.osiguravanje[0].value;
-    this.selectedPovrsina = this.povrsine[0].value;
-    this.selectedProcena = this.procenjene[0].value;
-    this.selectedStarost = this.starosti[0].value;
+    this.selectedOsigu = this.osiguravanje[0].label;
+    this.selectedPovrsina = this.povrsine[0].label;
+    this.selectedProcena = this.procenjene[0].label;
+    this.selectedStarost = this.starosti[0].label;
 
 
 

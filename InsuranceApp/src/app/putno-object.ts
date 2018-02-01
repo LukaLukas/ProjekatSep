@@ -5,6 +5,7 @@ export class PutnoObject {
                 public destinacija:string = "",
                 public vrstaPaketa:string = "",
                 public uzrastLica:string = "",
+                public sport:string = '',
                 public pocetakOsiguranja:string = "",
                 public trajanjeOsiguranja:string = "",
                 public iznos:string = "",

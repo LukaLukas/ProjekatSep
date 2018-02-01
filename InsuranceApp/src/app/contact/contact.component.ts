@@ -35,13 +35,13 @@ posaljiObjekat (obj1, obj2) {
 
     this.kontaktObjekat.naziv = obj1.value;
     this.kontaktObjekat.email = obj2.value;
-
+/*
   this.serv2.setValueContact(this.kontaktObjekat);
     
            this.serv.goContact(this.kontaktObjekat)
             .catch(err => console.log(err));
     
-          
+          */
 
 
 }

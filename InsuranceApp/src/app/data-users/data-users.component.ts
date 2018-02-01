@@ -102,36 +102,8 @@ export class DataUsersComponent implements OnInit {
         let broj = this.modelNizNosioci.imeNosilaca.length;
 
 
-      /*  for (var i = 0; i < broj; i++) {
+     
 
-            if (this.modelNizNosioci.imeNosilaca[i] == '' || this.modelNizNosioci.imeNosilaca[i] == null 
-          || this.modelNizNosioci.prezimeNosilac[i] == '' || this.modelNizNosioci.prezimeNosilac[i] == null
-          || this.modelNizNosioci.jmbgNosilac[i] == '' || this.modelNizNosioci.jmbgNosilac[i] == null 
-          || this.modelNizNosioci.pasosNosilac[i] == '' || this.modelNizNosioci.pasosNosilac[i]== null
-          || this.modelNizNosioci.adresaNosilac[i] == '' || this.modelNizNosioci.adresaNosilac[i] == null
-          || this.modelNizNosioci.telefonNosilac[i] == '' || this.modelNizNosioci.telefonNosilac[i] == null) {
-
-                this.vre = false;
-                break;
-                
-
-            }
-
-        }*/
-
-       // if (this.modelNizNosioci == null) {
-          //this.vre = false;
-        //}
-
-       // console.log(this.vre);
-
-
-             /* if (this.vre == false) {
-
-                alert("Niste popunili sva polja");
-                this.route.navigate(['/DataUsers'])
-
-              } else {*/
 
           this.serv.setValueNizNosioci(this.modelNizNosioci);
     

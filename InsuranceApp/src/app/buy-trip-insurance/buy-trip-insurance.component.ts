@@ -37,6 +37,9 @@ export class BuyTripInsuranceComponent implements OnInit {
    selectedValue;
    selectedYouth;
    selectedIznos;
+   selectedSport;
+   checkBoxValue:boolean;     
+   sport:boolean;
 
   changePorodicno(vrednost) {
 
@@ -88,6 +91,7 @@ export class BuyTripInsuranceComponent implements OnInit {
 
       this.modelVrednost.destinacija = this.selectedValue;
       this.modelVrednost.uzrastLica = this.selectedYouth;
+      this.modelVrednost.sport = this.selectedSport;
       this.modelVrednost.vrstaPaketa = value2.value;
       this.modelVrednost.pocetakOsiguranja = value3.value;
       this.modelVrednost.trajanjeOsiguranja = value4.value;
@@ -97,12 +101,14 @@ export class BuyTripInsuranceComponent implements OnInit {
 
           this.modelVrednost.brojDece = null;
           this.modelVrednost.brojRoditelja = null;
+          this.modelVrednost.sport = this.selectedSport;
           this.modelVrednost.brojac = 1;
       }
 
       else if (this.modelVrednost.vrstaPaketa == 'Porodicno') {
 
           this.modelVrednost.uzrastLica = null;
+          this.modelVrednost.sport = '';
           this.modelVrednost.brojac = this.modelVrednost.brojDece+this.modelVrednost.brojRoditelja;
       }
 
@@ -180,11 +186,32 @@ export class BuyTripInsuranceComponent implements OnInit {
 
        }
 
+       setNewSport(vrednost4:string) {
+
+            this.selectedSport = vrednost4;
+       }
+
+      newFunction() {
+
+          if (this.checkBoxValue == true) {
+
+                this.sport = true;      
+          }
+
+          else {
+            this.sport = false;
+          }
+
+      }
+
   ngOnInit() {
 
     this.selectedValue = '';
     this.selectedYouth = '';
     this.selectedIznos = '';
+    this.selectedSport = '';
+    this.checkBoxValue = false;
+    this.sport = false;
 
     this.modelVrednost = this.serv.getObjectPutno();
 
@@ -231,9 +258,10 @@ export class BuyTripInsuranceComponent implements OnInit {
     this.starts = starost;
     this.sports = procenjenaVrednost;
     this.iznoss = iznosDo;
-    this.selectedValue = this.regs[0].value;
-    this.selectedYouth = this.starts[0].value;
-    this.selectedIznos = this.iznoss[0].value;
+    this.selectedValue = this.regs[0].label;
+    this.selectedYouth = this.starts[0].label;
+    this.selectedIznos = this.iznoss[0].label;
+    this.selectedSport = this.sports[0].label;
     console.log(this.selectedValue);
     console.log(this.selectedIznos);
     console.log(this.selectedYouth);

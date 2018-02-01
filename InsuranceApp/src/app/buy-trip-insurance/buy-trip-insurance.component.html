@@ -202,7 +202,7 @@
                     <select   class="w3-select w3-border" id = "optionDestination" name="optionDestination" #selectElem (change)="setNewValue(selectElem.value)"  style = "width:70%;"> <!-- ovde ide baza podataka -->
                      
 
-                        <option *ngFor = "let a of regs" value = {{a.value}}> {{a.label}} </option>
+                        <option *ngFor = "let a of regs" value = {{a.label}}> {{a.label}} </option>
                         
                   
 
@@ -276,10 +276,8 @@
                      <!--   <select  ngModel class="w3-select w3-border" id = "uzrastLica" name="uzrastLica"  #uzrastLica = "ngModel"  style = "width:40%;"> --> <!-- ovde ide baza podataka -->      
                         <select class="w3-select w3-border" name="optionYouth" #selectYouth (change)="setNewYouth(selectYouth.value)"  style = "width:40%;" > <!-- ovde ide baza podataka -->
                             
-                            <option *ngFor = "let i of starts" value = {{i.value}}> {{i.label}} </option> 
-                        <!--<option value="Deca">Deca (6 meseci-18 godina)</option>
-                        <option value="Odrasli">Odrasli (18-70 godina)</option>
-                        <option value="Stariji">Stariji (preko 70 godina)</option> -->
+                            <option *ngFor = "let i of starts" value = {{i.label}}> {{i.label}} </option> 
+                     
                         </select>
                     </p>
                     </div>
@@ -289,7 +287,37 @@
                 <br>
 
 
-                <p >
+
+                <div *ngIf="!porodicno" style = "display:inline-block;margin-right:20px;">
+                    <br>
+                    <label style = "margin-right:10px;">Da li ce se korisnik baviti sportom</label>
+                        <input class="w3-check"  [(ngModel)]="checkBoxValue" [ngModelOptions]="{standalone: true}"  type="checkbox" (change)="newFunction()" >
+                       
+
+                       
+                    
+             </div>
+
+             <div *ngIf = "sport && !porodicno" style = "display:inline-block;width:250px;">
+                    
+                    <select class="w3-select w3-border" name="optionSport" #selectSport (change)="setNewSport(selectSport.value)"  style = "width:40%;" > <!-- ovde ide baza podataka -->
+                                                    
+                     <option *ngFor = "let s of sports" value = {{s.label}}> {{s.label}} </option> 
+                                             
+                </select>
+                    
+                    
+              </div>
+          
+     
+
+                <br>
+
+                <br>
+    
+
+
+                <p>
                         <label class = "w3-text-gray" for="pocetakOsiguranja"> <strong> Pocetak osiguranja </strong>  </label>
                         <input required  ngModel class="w3-input w3-border" id = "pocetakOsiguranja" name="pocetakOsiguranja" #pocetakOsiguranja="ngModel"  type="date" style = "width:40%;">
                         
@@ -323,20 +351,13 @@
                         <label class = "w3-text-gray" for="iznos"> <strong> Do kog iznosa je  (svaka) osoba osigurana </strong>  </label>
                         <br> 
                         <select   class="w3-select w3-border" #selectIznos (change)="setNewIznos(selectIznos.value)"  id = "iznos" name="iznos"   style = "width:70%;"> <!-- ovde ide baza podataka -->
-                            <option *ngFor = "let k of iznoss" value = {{k.value}}> {{k.label}} </option> 
-                           <!-- <option value="10000$">10000$</option>
-                            <option value="20000$">20000$</option>
-                            <option value="30000$">30000$</option>
-                            <option value="preko$">preko...</option> -->
+                            <option *ngFor = "let k of iznoss" value = {{k.label}}> {{k.label}} </option> 
+                        
 
                         </select>
                     </p>
     
-                        
-                <!--    <div class = "w3-panel" *ngIf="iznos.touched && !iznos.valid">
-                        <div *ngIf="iznos.errors.required" style="width:70%;">  <label class = "w3-text-red w3-large"> Morate uneti do kog iznosa su osobe osigurane </label></div>
-    
-                    </div>  -->
+                
     
                     <br>
 
@@ -351,51 +372,7 @@
 
  <!-- ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg  -->
 
-<!--
-                <p>      
-                <label class="w3-text-gray" for ="first" ><strong>First Name</strong></label>
-                <input required minlength="3" maxlength="10" ngModel class="w3-input w3-border" id = "first" name="first" #first="ngModel" (change)="log(first)" type="text" style = "width:70%;">
-                    
-                 </p>
-
-                 <div class = "w3-panel" *ngIf="first.touched && !first.valid">
-                        <div *ngIf="first.errors.required"  style = "width:70%;"><label class = "w3-text-red w3-large">Morate uneti ime </label> </div>
-                        <div *ngIf="first.errors.minlength" style = "width:70%;"> <label class = "w3-text-red w3-large"> malo je slova </label> </div>
-    
-                </div>
-            
-                
-
-                <p> 
-                
-                <br>
-                    
-                 <label class="w3-text-gray" for = "last"><strong>Last Name</strong></label>
-                <input required ngModel class="w3-input w3-border" id = "last" name="last" #last="ngModel" (change)="log2(last)" type="text" style = "width:70%;">
-        
-                </p>
-
-                <div class = "w3-panel" *ngIf="last.touched && !last.valid">
-                        <div *ngIf="last.errors.required"  style = "width:70%;"><label class = "w3-text-red w3-large">Morate uneti prezime </label> </div>
-                       
-                </div>
-
-                <p>
-                        <select  required ngModel class="w3-select w3-border" id = "optionDestination" name="optionDestination"  #optionDestination = "ngModel" (change)="log3(optionDestination)"  style = "width:70%;">  --><!-- ovde ide baza podataka -->
-            <!--                <option value="1" selected>Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                
-                </p>
-            
-
-                <br>
-                <p>
-                
-                
-                <button class="w3-btn w3-red" [disabled]="!myForm.form.valid" (click)="nestoDaProbam(first, last, optionDestination)" >Register</button></p>
-                -->   </form>
+              </form>
       <!-- </div> -->
 
 
@@ -407,22 +384,7 @@
         <div class = "w3-quarter">
 
            <p> </p>
-<!--
-                <div id="id01" class="w3-modal ">
-                       
-                        <app-buy-stambeno-insurance></app-buy-stambeno-insurance>
-                
-                      </div>
 
-
-
-                      <div id="id02" class="w3-modal ">
-                           
-                            <app-buy-casco-insurance></app-buy-casco-insurance>
-
-                          </div>
-
-                        -->
 
         </div>
 
@@ -447,14 +409,7 @@
          </div>
 
          <div class = "w3-quarter">
-             <!--   
-                <h3 class = "w3-text-blue">Dodatne mogucnosti:</h3>
-                <ul class = "w3-ul w3-border" style = "width:80%">
-                        <li> <label class = "w3-text-blue"><b>Stambeno osiguranje </b> </label> <button class = "w3-btn" onclick = "document.getElementById('id01').style.display='block'" > <i class="fa fa-check" style="font-size:36px"></i>  </button> </li>
-                        <li> <label class = "w3-text-blue"><b>Pomoc na putu </b> </label> <button class = "w3-btn" onclick = "document.getElementById('id02').style.display='block'" > <i class="fa fa-check" style="font-size:36px"></i>  </button> </li>
-                        
-                </ul>        
-            -->
+             
                 
         </div>
 
@@ -464,7 +419,7 @@
     <br>
     <br>
 
-    <div class = "w3-row">
+   <!-- <div class = "w3-row">
 
 
         <div class = "w3-quarter">
@@ -513,7 +468,7 @@
 
 
 
-    </div>
+    </div> -->
 
     <br>
     

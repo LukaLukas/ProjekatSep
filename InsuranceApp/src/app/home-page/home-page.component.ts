@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit {
    modelProba = this.serv.getProbaObject();
    model: ProbaObject = new ProbaObject();
    str:String;
-   putno:PutnoObject = new PutnoObject('Srbija', '2', 'deca', 'danas', '3', '30000', 2, 3, 1);
+   putno:PutnoObject = new PutnoObject('Srbija', '2', 'deca', 'Fudbal', 'danas', '3', '30000', 2, 3, 1);
    nos:Nosilac = new Nosilac('pera', 'peric', 'gdgd', 'fsfsfsd', 'sfsf', 'dada', 'dfgdg');
    stamb:StambenoObject = new StambenoObject('3', '80', '2', '80', 'danas', 'adresa', 'lukaLukic', '2608999322', true );
    put:PutObject = new PutObject('lukaLukic', '8678678', '3', '2', '30', '20', '3', 'ne', 'reno', '2009', '234432324324', '979707979978', true );

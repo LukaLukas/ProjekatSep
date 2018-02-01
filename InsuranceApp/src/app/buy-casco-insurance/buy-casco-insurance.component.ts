@@ -150,11 +150,11 @@ export class BuyCascoInsuranceComponent implements OnInit {
 
 
 
-    this.selectedPackage = this.pakets[0].value;
-    this.selectedSlep = this.sleps[0].value;
-    this.selectedRep = this.repairs[0].value;
-    this.selectedHot = this.hotels[0].value;
-    this.selectedAl = this.alts[0].value;
+    this.selectedPackage = this.pakets[0].label;
+    this.selectedSlep = this.sleps[0].label;
+    this.selectedRep = this.repairs[0].label;
+    this.selectedHot = this.hotels[0].label;
+    this.selectedAl = this.alts[0].label;
 
 
 
