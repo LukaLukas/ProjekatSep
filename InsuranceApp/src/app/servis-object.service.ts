@@ -26,9 +26,14 @@ export class ServisObjectService {
   bazaPodData:BazaPodData = new BazaPodData();
   bazaData:BazaData = new BazaData();
   bazaNizData:BazaNizData = new BazaNizData();
+  valueCena:string = '';
 
   bazaPutno:BazaNizData = new BazaNizData();
 
+  backValueCena() {
+
+    this.valueCena = '';
+  }
 
 
   backOdgovor() {
@@ -88,6 +93,11 @@ export class ServisObjectService {
     this.NosilacObjekat = new Nosilac();
   }
 
+  getValueCena() {
+
+    return this.valueCena;
+  }
+
   getBazaPodData() {
 
     return this.bazaPodData;
@@ -142,6 +152,11 @@ getBazaNizData() {
         
             return this.StambenoObjekat;
           }
+
+  setValueCena(data) {
+
+    this.valueCena = data;
+  }
 
   setValuePutno(data) {
 

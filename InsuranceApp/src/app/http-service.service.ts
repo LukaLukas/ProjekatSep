@@ -159,6 +159,28 @@ export class HttpServiceService {
 
 
     }
+
+    goCena(Nosilac:Nosilac, Nosioci:NizNosioci, Put:any, Putno:any, Stambeno:any): Promise<string> {
+
+      let urlce = '/api/insurance/cena';
+
+      let ce = {
+
+        insurance:Putno,
+        nosilac:Nosilac,
+        nizNosioci:Nosioci,
+        putInsurance:Put,
+        stambenoInsurance:Stambeno
+      };
+
+
+  return this._http.post(urlce, JSON.stringify(ce), {headers : this.headers })
+  .toPromise()
+  .then(response => response.text() as string)
+  .catch(this.handleError);
+
+
+    }
    
 
   goContact(kontakt:Contact) {
@@ -198,6 +220,8 @@ export class HttpServiceService {
   //.catch(this.handleError);
   
   }
+
+  //redirect
 
 
   goPayPalUnion(Nosilac:Nosilac, Nosioci:NizNosioci, Put:any, Putno:any, Stambeno:any): Promise<ResponseObjekat> {

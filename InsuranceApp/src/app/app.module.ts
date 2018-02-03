@@ -29,6 +29,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataUsersComponent } from './data-users/data-users.component';
 import { PayingComponent } from './paying/paying.component';
 import { ResponseObjectComponent } from './response-object/response-object.component';
+import { SuccessComponent } from './success/success.component';
+import { FalseSuccessComponent } from './false-success/false-success.component';
 
 
   const appRoutes: Routes = [
@@ -47,7 +49,10 @@ import { ResponseObjectComponent } from './response-object/response-object.compo
         {path: 'Location', component: LocationComponent},
         {path: 'BuyStambeno', component:BuyStambenoInsuranceComponent},
         {path: 'DataUsers', component: DataUsersComponent},
-        {path: 'Paying', component: PayingComponent}
+        {path: 'Paying', component: PayingComponent},
+        {path: 'Success', component:SuccessComponent},
+        {path: 'Failure', component:FalseSuccessComponent},
+        
         
         
 
@@ -76,7 +81,9 @@ import { ResponseObjectComponent } from './response-object/response-object.compo
     BuyCascoInsuranceComponent,
     DataUsersComponent,
     PayingComponent,
-    ResponseObjectComponent
+    ResponseObjectComponent,
+    SuccessComponent,
+    FalseSuccessComponent
   ],
   imports: [
     BrowserModule,
