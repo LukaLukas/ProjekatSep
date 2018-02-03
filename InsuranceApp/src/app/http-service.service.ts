@@ -193,6 +193,17 @@ export class HttpServiceService {
 
   }
 
+  goPayPalPayment() {
+
+  let urlk = '/pay';
+
+  return this._http.post(urlk, {headers : this.headers })
+  .toPromise()
+  .catch(this.handleError);
+
+  }
+
+
 
   goAscquierUnion(Nosilac:Nosilac, Nosioci:NizNosioci, Put:any, Putno:any, Stambeno:any) : Promise<ResponseObjekat>{
 

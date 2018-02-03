@@ -48,6 +48,16 @@ export class PayingComponent implements OnInit {
 
       }
 
+      goPayPalPayment() {
+        this.serv.goPayPalPayment()
+        .then(data => this.modelResponse = data);
+        document.getElementById('id3').style.display='block';
+       // setTimeout(function(){ this.redirect(); }, 5000);
+   
+     
+
+    }
+
       goAscquier() {
 
           this.serv.goAscquierUnion(this.Nosioc, this.Nosioci, this.Put, this.Putno, this.Stambeno)
